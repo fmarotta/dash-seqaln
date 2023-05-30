@@ -1,0 +1,37 @@
+.DashSeqaln table {
+  font-family: monospace;
+}
+
+.DashSeqaln table .series-label,.aln-label {
+  padding-right: 15px;
+  font-weight: bold
+}
+
+.DashSeqaln table td {
+  vertical-align: bottom;
+}
+
+.DashSeqaln .Sortable {
+  margin-top: 20px;
+}
+
+.DashSeqaln .Sortable .SortableItem {
+  padding: 5px;
+  border: 1px solid gray;
+}
+
+.DashSeqaln .DashSeqaln-select {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+
+.DashSeqaln .DashSeqaln-select .DashSeqaln-included,.DashSeqaln-excluded {
+  width: 45%;
+  min-width: 250px;
+}
+
+.DashSeqaln .DashSeqaln-select .DashSeqaln-included div, .DashSeqaln .DashSeqaln-select .DashSeqaln-excluded div {
+  padding: 5px;
+  border: 1px solid black;
+}
