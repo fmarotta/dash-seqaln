@@ -10,8 +10,8 @@ import { color_msa_column } from '../msa_color_schemes.js';
  * ExampleComponent is an example component.
  */
 export default function DashSeqaln(props) {
-  const {id, title, alignment, included, excluded, series, setProps} = props;
-  const {color_scheme, allow_sequence_selection, show_letters, show_seqnum, zoom} = props;
+  const {id, title, alignment, included, excluded, series, color_scheme, setProps} = props;
+  const {allow_sequence_selection = true, show_letters = true, show_seqnum = false, zoom = "10px", border_spacing = "0px"} = props;
   const setIncluded = (items) => {
     setProps({included: items.map((x) => x.name)});
   };
@@ -39,7 +39,7 @@ export default function DashSeqaln(props) {
   return (
     <div id={id} className="DashSeqaln">
       <h2>{title}</h2>
-      <table>
+      <table style={{"borderSpacing": border_spacing}}>
         {series.map((seriesItem) => (
           <thead key={"series-"+seriesItem.label}>
           <tr>
@@ -58,14 +58,14 @@ export default function DashSeqaln(props) {
         <tr>
           <td className="aln-axis-label"></td>
           <td className="aln-axis-seqnum"></td>
-          {aln_breaks.map((x) => <td className="aln-axis">{x}</td>)}
+          {aln_breaks.map((x, index) => <td key={"aln-resnum-"+index} className="aln-axis"><div style={{"width": "0px"}}>{x}</div></td>)}
         </tr>
         {included.map((seqId, seqIndex) => (
           <tr key={"aln-"+seqId}>
             <td className="aln-label">{seqId}</td>
             <td className="aln-seqnum">{show_seqnum ? seqIndex : ""}</td>
             {alignment[seqId].split("").map((letter, index) => (
-              <td key={"aln-"+index} style={{"backgroundColor": alignment_colors[seqId][index]}}>{letter}</td>
+              <td key={"aln-"+index} style={{"backgroundColor": alignment_colors[seqId][index], "width": "10px"}}>{show_letters ? letter : ""}</td>
             ))}
           </tr>
         ))}

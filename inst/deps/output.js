@@ -64,7 +64,7 @@ window["dash_seqaln"] =
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "91bf4dc444515e7c58df";
+/******/ 	var hotCurrentHash = "e99586881c452af05ecf";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -836,7 +836,7 @@ window["dash_seqaln"] =
 /******/ 	        var srcFragments = src.split('/');
 /******/ 	        var fileFragments = srcFragments.slice(-1)[0].split('.');
 /******/
-/******/ 	        fileFragments.splice(1, 0, "v0_0_1m1685553792");
+/******/ 	        fileFragments.splice(1, 0, "v0_0_1m1685554797");
 /******/ 	        srcFragments.splice(-1, 1, fileFragments.join('.'))
 /******/
 /******/ 	        return srcFragments.join('/');
@@ -36373,6 +36373,7 @@ var App = /*#__PURE__*/function (_Component) {
       excluded: [],
       series: sampleSeries,
       color_scheme: "Flower",
+      show_letters: true,
       allow_sequence_selection: true
     };
     _this.setProps = _this.setProps.bind(_assertThisInitialized(_this));
@@ -36510,12 +36511,18 @@ function DashSeqaln(props) {
     included = props.included,
     excluded = props.excluded,
     series = props.series,
+    color_scheme = props.color_scheme,
     setProps = props.setProps;
-  var color_scheme = props.color_scheme,
-    allow_sequence_selection = props.allow_sequence_selection,
-    show_letters = props.show_letters,
-    show_seqnum = props.show_seqnum,
-    zoom = props.zoom;
+  var _props$allow_sequence = props.allow_sequence_selection,
+    allow_sequence_selection = _props$allow_sequence === void 0 ? true : _props$allow_sequence,
+    _props$show_letters = props.show_letters,
+    show_letters = _props$show_letters === void 0 ? true : _props$show_letters,
+    _props$show_seqnum = props.show_seqnum,
+    show_seqnum = _props$show_seqnum === void 0 ? false : _props$show_seqnum,
+    _props$zoom = props.zoom,
+    zoom = _props$zoom === void 0 ? "10px" : _props$zoom,
+    _props$border_spacing = props.border_spacing,
+    border_spacing = _props$border_spacing === void 0 ? "0px" : _props$border_spacing;
   var setIncluded = function setIncluded(items) {
     setProps({
       included: items.map(function (x) {
@@ -36548,7 +36555,11 @@ function DashSeqaln(props) {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     id: id,
     className: "DashSeqaln"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("table", null, series.map(function (seriesItem) {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("table", {
+    style: {
+      "borderSpacing": border_spacing
+    }
+  }, series.map(function (seriesItem) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("thead", {
       key: "series-" + seriesItem.label
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
@@ -36583,10 +36594,15 @@ function DashSeqaln(props) {
     className: "aln-axis-label"
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
     className: "aln-axis-seqnum"
-  }), aln_breaks.map(function (x) {
+  }), aln_breaks.map(function (x, index) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
+      key: "aln-resnum-" + index,
       className: "aln-axis"
-    }, x);
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      style: {
+        "width": "0px"
+      }
+    }, x));
   })), included.map(function (seqId, seqIndex) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", {
       key: "aln-" + seqId
@@ -36598,9 +36614,10 @@ function DashSeqaln(props) {
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
         key: "aln-" + index,
         style: {
-          "backgroundColor": alignment_colors[seqId][index]
+          "backgroundColor": alignment_colors[seqId][index],
+          "width": "10px"
         }
-      }, letter);
+      }, show_letters ? letter : "");
     }));
   }))), sequence_selection_component);
 }

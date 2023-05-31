@@ -29,8 +29,8 @@ python setup.py sdist bdist_wheel
 * ~[] maybe, make aln compatible with BioPython and series compatible with plotly~ (AlignIO is a class, we need a dict)
 * [] add a row for the secondary structure (maybe a row for each sequence?)
 * [x] add position on the x axis, scale on the y axis (for series), or sequence number (for sequences)
-* [] show letters or hide them
-* [] change the width of the <td>s to zoom out
+* [x] show letters or hide them
+* [x] change the width of the <td>s to zoom out
 * [] reorganise css class names (e.g. all labels should be the same)
 
 # dash_seqaln

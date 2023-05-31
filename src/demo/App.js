@@ -28,6 +28,7 @@ class App extends Component {
             excluded: [],
             series: sampleSeries,
             color_scheme: "Flower",
+            show_letters: true,
             allow_sequence_selection: true,
         };
         this.setProps = this.setProps.bind(this);
