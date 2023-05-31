@@ -20,8 +20,8 @@ python setup.py sdist bdist_wheel
 * [x] show histograms
 * [] color the msa
 * [] support clicking rows or cols
-* [] scale the height of the histograms between a and b
-* [] series should be a list of dict. the dict should be {label, values, color, scale}
+* [x] scale the height of the histograms between a and b
+* [x] series should be a list of dict. the dict should be {label, values, color, scale}
 * ~[] maybe, make aln compatible with BioPython and series compatible with plotly~ (AlignIO is a class, we need a dict)
 * [] add a row for the structure (maybe a row for each sequence?)
 * [] add position on the x axis, scale on the y axis (for series), or sequence number (for sequences)

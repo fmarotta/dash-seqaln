@@ -14,7 +14,7 @@ window["dash_seqaln"] =
 /******/ 	function hotDownloadUpdateChunk(chunkId) {
 /******/ 		var script = document.createElement("script");
 /******/ 		script.charset = "utf-8";
-/******/ 		script.src = __webpack_require__.p + "c154d3e-" + chunkId + "-wps-hmr.js";
+/******/ 		script.src = __webpack_require__.p + "d214699-" + chunkId + "-wps-hmr.js";
 /******/ 		if (null) script.crossOrigin = null;
 /******/ 		document.head.appendChild(script);
 /******/ 	}
@@ -28,7 +28,7 @@ window["dash_seqaln"] =
 /******/ 			}
 /******/ 			try {
 /******/ 				var request = new XMLHttpRequest();
-/******/ 				var requestPath = __webpack_require__.p + "c154d3e-wps-hmr.json";
+/******/ 				var requestPath = __webpack_require__.p + "d214699-wps-hmr.json";
 /******/ 				request.open("GET", requestPath, true);
 /******/ 				request.timeout = requestTimeout;
 /******/ 				request.send(null);
@@ -64,7 +64,7 @@ window["dash_seqaln"] =
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "8058500b3f98093e691d";
+/******/ 	var hotCurrentHash = "73acc8c20045c6374fd3";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -836,7 +836,7 @@ window["dash_seqaln"] =
 /******/ 	        var srcFragments = src.split('/');
 /******/ 	        var fileFragments = srcFragments.slice(-1)[0].split('.');
 /******/
-/******/ 	        fileFragments.splice(1, 0, "v0_0_1m1685537710");
+/******/ 	        fileFragments.splice(1, 0, "v0_0_1m1685540020");
 /******/ 	        srcFragments.splice(-1, 1, fileFragments.join('.'))
 /******/
 /******/ 	        return srcFragments.join('/');
@@ -35238,7 +35238,7 @@ function invariant(condition, message) {
   let hash = '<unknown>';
   let options;
   try {
-    options = {"compress":null,"historyFallback":false,"hmr":true,"host":null,"liveReload":false,"log":{"level":"info","prefix":{"template":"{{level}}"},"name":"webpack-plugin-serve"},"open":true,"port":55555,"progress":true,"secure":false,"static":["/home/fmarotta/Projects/dash-seqaln"],"status":true,"address":"[::]:55555","compilerName":null,"wpsId":"c154d3e"};
+    options = {"compress":null,"historyFallback":false,"hmr":true,"host":null,"liveReload":false,"log":{"level":"info","prefix":{"template":"{{level}}"},"name":"webpack-plugin-serve"},"open":true,"port":55555,"progress":true,"secure":false,"static":["/home/fmarotta/Projects/dash-seqaln"],"status":true,"address":"[::]:55555","compilerName":null,"wpsId":"d214699"};
   } catch (e) {
     const { log } = __webpack_require__(/*! ./lib/client/log */ "./node_modules/webpack-plugin-serve/lib/client/log.js");
     log.error(
@@ -36348,9 +36348,12 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 /* eslint no-magic-numbers: 0 */
 
 
-var sampleSeries = {
-  Entropy: [0, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 0.3, 0.5, 0.2, 0.7, 0.9, 1]
-};
+var sampleSeries = [{
+  label: "Entropy",
+  values: [0, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 0.3, 0.5, 0.2, 0.7, 0.9, 1],
+  color: "green",
+  height: "100px"
+}];
 var sampleAln = {
   "id1": "ART--RGPWTQRW-LLERERP---RM-M",
   "id2": "A-MD-RGD-TDRWPLLD-EWP---RTFM",
@@ -36533,18 +36536,21 @@ function DashSeqaln(props) {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     id: id,
     className: "DashSeqaln"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("table", null, Object.keys(series).map(function (label) {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("table", null, series.map(function (seriesItem) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("thead", {
-      key: "series-" + label
+      key: "series-" + seriesItem.label
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
       className: "series-label"
-    }, label), series[label].map(function (height, index) {
+    }, seriesItem.label), seriesItem.values.map(function (value, index) {
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
-        key: "series-" + index
+        key: "series-" + index,
+        style: {
+          "height": seriesItem.height
+        }
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         style: {
-          "backgroundColor": "red",
-          "height": 100 * height
+          "backgroundColor": seriesItem.color,
+          "height": 100 * value + "%"
         }
       }));
     })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
@@ -36631,13 +36637,13 @@ DashSeqaln.propTypes = {
    */
   title: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string.isRequired,
   /**
-   * An iterable containing the sequences as objects with `id` and `seq` fields.
+   * An object representing the MSA.
    */
-  alignment: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.array,
+  alignment: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.object,
   /**
-   * Object of numeric lists for the bar plots.
+   * List of objects, each containing the data for a bar plot.
    */
-  series: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.object,
+  series: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.array,
   /**
    * List of sequence IDs to show in the alignment.
    */

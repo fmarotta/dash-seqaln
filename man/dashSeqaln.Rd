@@ -17,13 +17,13 @@ series=NULL, title=NULL)
 \arguments{
 \item{id}{Character. The ID used to identify this component in Dash callbacks.}
 
-\item{alignment}{Unnamed list. An iterable containing the sequences as objects with `id` and `seq` fields.}
+\item{alignment}{Named list. An object representing the MSA.}
 
 \item{excluded}{Unnamed list. List of sequence IDs to NOT show in the alignment.}
 
 \item{included}{Unnamed list. List of sequence IDs to show in the alignment.}
 
-\item{series}{Named list. Object of numeric lists for the bar plots.}
+\item{series}{Unnamed list. List of objects, each containing the data for a bar plot.}
 
 \item{title}{Character. A label that will be printed when this component is rendered.}
 }

@@ -3,9 +3,14 @@ import React, {Component} from 'react';
 
 import { DashSeqaln } from '../lib';
 
-let sampleSeries = {
-    Entropy: [0, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 0.3, 0.5, 0.2, 0.7, 0.9, 1],
-}
+let sampleSeries = [
+    {
+        label: "Entropy",
+        values: [0, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 0.3, 0.5, 0.2, 0.7, 0.9, 1],
+        color: "green",
+        height: "100px",
+    },
+]
 let sampleAln = {
     "id1": "ART--RGPWTQRW-LLERERP---RM-M",
     "id2": "A-MD-RGD-TDRWPLLD-EWP---RTFM",

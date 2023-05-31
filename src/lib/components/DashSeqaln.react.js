@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import { ReactSortable } from 'react-sortablejs';
 import './DashSeqaln.react.css';
 
+// NOTE: series values must be scaled between 0 and 1
+
 /**
  * ExampleComponent is an example component.
  */
@@ -29,13 +31,13 @@ export default function DashSeqaln(props) {
     <div id={id} className="DashSeqaln">
       <h2>{title}</h2>
       <table>
-        {Object.keys(series).map((label) => (
-          <thead key={"series-"+label}>
+        {series.map((seriesItem) => (
+          <thead key={"series-"+seriesItem.label}>
           <tr>
-            <td className="series-label">{label}</td>
-            {series[label].map((height, index) => (
-              <td key={"series-"+index}>
-                <div style={{"backgroundColor": "red", "height": 100 * height}}></div>
+            <td className="series-label">{seriesItem.label}</td>
+            {seriesItem.values.map((value, index) => (
+              <td key={"series-"+index} style={{"height": seriesItem.height}}>
+                <div style={{"backgroundColor": seriesItem.color, "height": (100 * value) + "%"}}></div>
               </td>
             ))}
           </tr>
@@ -108,14 +110,14 @@ DashSeqaln.propTypes = {
     title: PropTypes.string.isRequired,
 
     /**
-     * An iterable containing the sequences as objects with `id` and `seq` fields.
+     * An object representing the MSA.
      */
-    alignment: PropTypes.array,
+    alignment: PropTypes.object,
 
     /**
-     * Object of numeric lists for the bar plots.
+     * List of objects, each containing the data for a bar plot.
      */
-    series: PropTypes.object,
+    series: PropTypes.array,
 
     /**
      * List of sequence IDs to show in the alignment.
