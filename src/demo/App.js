@@ -7,9 +7,9 @@ let sampleSeries = {
     Entropy: [0, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 0.3, 0.5, 0.2, 0.7, 0.9, 1],
 }
 let sampleAln = {
-    id1: "ART--RGPWTQRW-LLERERP---RM-M",
-    id2: "A-MD-RGD-TDRWPLLD-EWP---RTFM",
-    id3: "AR--TRGP-TERWP--ERERP---RM-M",
+    "id1": "ART--RGPWTQRW-LLERERP---RM-M",
+    "id2": "A-MD-RGD-TDRWPLLD-EWP---RTFM",
+    "id3": "AR--TRGP-TERWP--ERERP---RM-M",
 }
 
 class App extends Component {
@@ -18,10 +18,11 @@ class App extends Component {
         super();
         this.state = {
             title: "My MSA",
-            aln: sampleAln,
+            alignment: sampleAln,
             included: Object.keys(sampleAln),
             excluded: [],
             series: sampleSeries,
+            allow_sequence_selection: true,
         };
         this.setProps = this.setProps.bind(this);
     }

@@ -3,34 +3,28 @@ import PropTypes from 'prop-types';
 import { ReactSortable } from 'react-sortablejs';
 import './DashSeqaln.react.css';
 
-function listdiff(l1, l2) {
-  return l1.filter((x) => !l2.includes(x));
-}
-
-function make_sortablejs_items(l) {
-  return l.map((item) => ({
-    id: "sortable-"+item,
-    selected: false,
-    chosen: false,
-    filtered: false,
-    name: item,
-  }));
-}
-
 /**
  * ExampleComponent is an example component.
  */
 export default function DashSeqaln(props) {
-  const {id, title, aln, included, excluded, series, setProps} = props;
-  // sortablejs needs items as objects with at least the `id` field.
-  const includedItems = make_sortablejs_items(included);
-  const excludedItems = make_sortablejs_items(excluded);
+  const {id, title, alignment, included, excluded, series, setProps} = props;
+  const {allow_sequence_selection, show_letters, zoom} = props;
   const setIncluded = (items) => {
     setProps({included: items.map((x) => x.name)});
   };
   const setExcluded = (items) => {
     setProps({excluded: items.map((x) => x.name)});
   };
+  let sequence_selection_component = <></>;
+  if (allow_sequence_selection === true) {
+    sequence_selection_component = DashSeqalnSelect({
+      id: id,
+      included: included,
+      excluded: excluded,
+      setIncluded: setIncluded,
+      setExcluded: setExcluded
+    });
+  }
   return (
     <div id={id} className="DashSeqaln">
       <h2>{title}</h2>
@@ -49,32 +43,55 @@ export default function DashSeqaln(props) {
           </thead>
         ))}
       <tbody>
-        {included.map((seqItem) => (
-          <tr key={"aln-"+seqItem}>
-            <td className="aln-label">{seqItem}</td>
-            {aln[seqItem].split("").map((letter, index) => (
+        {included.map((seqId) => (
+          <tr key={"aln-"+seqId}>
+            <td className="aln-label">{seqId}</td>
+            {alignment[seqId].split("").map((letter, index) => (
               <td key={"aln-"+index}>{letter}</td>
             ))}
           </tr>
         ))}
       </tbody>
       </table>
-      <div className="DashSeqaln-select">
-        <div className="DashSeqaln-included">
-          <h3>Included sequences</h3>
-          <ReactSortable group={"DashSeqaln-"+id} list={includedItems} setList={setIncluded} className="Sortable">
-            {includedItems.map((item) => (<div key={item.id} className="SortableItem">{item.name}</div>))}
-          </ReactSortable>
-        </div>
-        <div className="DashSeqaln-excluded">
-          <h3>Excluded sequences</h3>
-          <ReactSortable group={"DashSeqaln-"+id} list={excludedItems} setList={setExcluded} className="Sortable">
-            {excludedItems.map((item) => (<div key={item.id} className="SortableItem">{item.name}</div>))}
-          </ReactSortable>
-        </div>
+      {sequence_selection_component}
+    </div>
+  );
+}
+
+function DashSeqalnSelect({id, included, excluded, setIncluded, setExcluded}) {
+  // sortablejs needs items as objects with at least the `id` field.
+  const includedItems = make_sortablejs_items(included);
+  const excludedItems = make_sortablejs_items(excluded);
+  return (
+    <div className="DashSeqaln-select">
+      <div className="DashSeqaln-included">
+        <h3>Included sequences</h3>
+        <ReactSortable group={"DashSeqaln-"+id} list={includedItems} setList={setIncluded} className="Sortable">
+          {includedItems.map((item) => (<div key={item.id} className="SortableItem">{item.name}</div>))}
+        </ReactSortable>
+      </div>
+      <div className="DashSeqaln-excluded">
+        <h3>Excluded sequences</h3>
+        <ReactSortable group={"DashSeqaln-"+id} list={excludedItems} setList={setExcluded} className="Sortable">
+          {excludedItems.map((item) => (<div key={item.id} className="SortableItem">{item.name}</div>))}
+        </ReactSortable>
       </div>
     </div>
   );
+}
+
+function listdiff(l1, l2) {
+  return l1.filter((x) => !l2.includes(x));
+}
+
+function make_sortablejs_items(l) {
+  return l.map((item) => ({
+    id: "sortable-"+item,
+    selected: false,
+    chosen: false,
+    filtered: false,
+    name: item,
+  }));
 }
 
 DashSeqaln.defaultProps = {};
@@ -91,9 +108,9 @@ DashSeqaln.propTypes = {
     title: PropTypes.string.isRequired,
 
     /**
-     * An object containing the MSA as strings.
+     * An iterable containing the sequences as objects with `id` and `seq` fields.
      */
-    aln: PropTypes.object,
+    alignment: PropTypes.array,
 
     /**
      * Object of numeric lists for the bar plots.

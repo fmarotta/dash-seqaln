@@ -10,14 +10,14 @@ ExampleComponent is an example component.
 }
 
 \usage{
-dashSeqaln(id=NULL, aln=NULL, excluded=NULL, included=NULL,
+dashSeqaln(id=NULL, alignment=NULL, excluded=NULL, included=NULL,
 series=NULL, title=NULL)
 }
 
 \arguments{
 \item{id}{Character. The ID used to identify this component in Dash callbacks.}
 
-\item{aln}{Named list. An object containing the MSA as strings.}
+\item{alignment}{Unnamed list. An iterable containing the sequences as objects with `id` and `seq` fields.}
 
 \item{excluded}{Unnamed list. List of sequence IDs to NOT show in the alignment.}
 

@@ -14,7 +14,7 @@ window["dash_seqaln"] =
 /******/ 	function hotDownloadUpdateChunk(chunkId) {
 /******/ 		var script = document.createElement("script");
 /******/ 		script.charset = "utf-8";
-/******/ 		script.src = __webpack_require__.p + "e76bdf7-" + chunkId + "-wps-hmr.js";
+/******/ 		script.src = __webpack_require__.p + "c154d3e-" + chunkId + "-wps-hmr.js";
 /******/ 		if (null) script.crossOrigin = null;
 /******/ 		document.head.appendChild(script);
 /******/ 	}
@@ -28,7 +28,7 @@ window["dash_seqaln"] =
 /******/ 			}
 /******/ 			try {
 /******/ 				var request = new XMLHttpRequest();
-/******/ 				var requestPath = __webpack_require__.p + "e76bdf7-wps-hmr.json";
+/******/ 				var requestPath = __webpack_require__.p + "c154d3e-wps-hmr.json";
 /******/ 				request.open("GET", requestPath, true);
 /******/ 				request.timeout = requestTimeout;
 /******/ 				request.send(null);
@@ -64,7 +64,7 @@ window["dash_seqaln"] =
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "560d79876944341059c3";
+/******/ 	var hotCurrentHash = "8058500b3f98093e691d";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -836,7 +836,7 @@ window["dash_seqaln"] =
 /******/ 	        var srcFragments = src.split('/');
 /******/ 	        var fileFragments = srcFragments.slice(-1)[0].split('.');
 /******/
-/******/ 	        fileFragments.splice(1, 0, "v0_0_1m1685450466");
+/******/ 	        fileFragments.splice(1, 0, "v0_0_1m1685537710");
 /******/ 	        srcFragments.splice(-1, 1, fileFragments.join('.'))
 /******/
 /******/ 	        return srcFragments.join('/');
@@ -35238,7 +35238,7 @@ function invariant(condition, message) {
   let hash = '<unknown>';
   let options;
   try {
-    options = {"compress":null,"historyFallback":false,"hmr":true,"host":null,"liveReload":false,"log":{"level":"info","prefix":{"template":"{{level}}"},"name":"webpack-plugin-serve"},"open":true,"port":55555,"progress":true,"secure":false,"static":["/home/fmarotta/Projects/dash-seqaln"],"status":true,"address":"[::]:55555","compilerName":null,"wpsId":"e76bdf7"};
+    options = {"compress":null,"historyFallback":false,"hmr":true,"host":null,"liveReload":false,"log":{"level":"info","prefix":{"template":"{{level}}"},"name":"webpack-plugin-serve"},"open":true,"port":55555,"progress":true,"secure":false,"static":["/home/fmarotta/Projects/dash-seqaln"],"status":true,"address":"[::]:55555","compilerName":null,"wpsId":"c154d3e"};
   } catch (e) {
     const { log } = __webpack_require__(/*! ./lib/client/log */ "./node_modules/webpack-plugin-serve/lib/client/log.js");
     log.error(
@@ -36352,9 +36352,9 @@ var sampleSeries = {
   Entropy: [0, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 0.3, 0.5, 0.2, 0.7, 0.9, 1]
 };
 var sampleAln = {
-  id1: "ART--RGPWTQRW-LLERERP---RM-M",
-  id2: "A-MD-RGD-TDRWPLLD-EWP---RTFM",
-  id3: "AR--TRGP-TERWP--ERERP---RM-M"
+  "id1": "ART--RGPWTQRW-LLERERP---RM-M",
+  "id2": "A-MD-RGD-TDRWPLLD-EWP---RTFM",
+  "id3": "AR--TRGP-TERWP--ERERP---RM-M"
 };
 var App = /*#__PURE__*/function (_Component) {
   _inherits(App, _Component);
@@ -36365,10 +36365,11 @@ var App = /*#__PURE__*/function (_Component) {
     _this = _super.call(this);
     _this.state = {
       title: "My MSA",
-      aln: sampleAln,
+      alignment: sampleAln,
       included: Object.keys(sampleAln),
       excluded: [],
-      series: sampleSeries
+      series: sampleSeries,
+      allow_sequence_selection: true
     };
     _this.setProps = _this.setProps.bind(_assertThisInitialized(_this));
     return _this;
@@ -36486,33 +36487,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_sortablejs__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_sortablejs__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _DashSeqaln_react_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./DashSeqaln.react.css */ "./src/lib/components/DashSeqaln.react.css");
 /* harmony import */ var _DashSeqaln_react_css__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_DashSeqaln_react_css__WEBPACK_IMPORTED_MODULE_3__);
-/**
- * TODO:
- * color the msa
- * support clicking rows or cols
- * scale the height of the histograms between a and b
- */
 
 
 
 
-
-function listdiff(l1, l2) {
-  return l1.filter(function (x) {
-    return !l2.includes(x);
-  });
-}
-function make_sortablejs_items(l) {
-  return l.map(function (item) {
-    return {
-      id: "sortable-" + item,
-      selected: false,
-      chosen: false,
-      filtered: false,
-      name: item
-    };
-  });
-}
 
 /**
  * ExampleComponent is an example component.
@@ -36520,14 +36498,14 @@ function make_sortablejs_items(l) {
 function DashSeqaln(props) {
   var id = props.id,
     title = props.title,
-    aln = props.aln,
+    alignment = props.alignment,
     included = props.included,
     excluded = props.excluded,
     series = props.series,
     setProps = props.setProps;
-  // sortablejs needs items as objects with at least the `id` field.
-  var includedItems = make_sortablejs_items(included);
-  var excludedItems = make_sortablejs_items(excluded);
+  var allow_sequence_selection = props.allow_sequence_selection,
+    show_letters = props.show_letters,
+    zoom = props.zoom;
   var setIncluded = function setIncluded(items) {
     setProps({
       included: items.map(function (x) {
@@ -36542,6 +36520,16 @@ function DashSeqaln(props) {
       })
     });
   };
+  var sequence_selection_component = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null);
+  if (allow_sequence_selection === true) {
+    sequence_selection_component = DashSeqalnSelect({
+      id: id,
+      included: included,
+      excluded: excluded,
+      setIncluded: setIncluded,
+      setExcluded: setExcluded
+    });
+  }
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     id: id,
     className: "DashSeqaln"
@@ -36567,17 +36555,28 @@ function DashSeqaln(props) {
         "border": "dashed 1px lightGray"
       }
     }))));
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tbody", null, included.map(function (seqItem) {
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tbody", null, included.map(function (seqId) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", {
-      key: "aln-" + seqItem
+      key: "aln-" + seqId
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
       className: "aln-label"
-    }, seqItem), aln[seqItem].split("").map(function (letter, index) {
+    }, seqId), alignment[seqId].split("").map(function (letter, index) {
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
         key: "aln-" + index
       }, letter);
     }));
-  }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }))), sequence_selection_component);
+}
+function DashSeqalnSelect(_ref) {
+  var id = _ref.id,
+    included = _ref.included,
+    excluded = _ref.excluded,
+    setIncluded = _ref.setIncluded,
+    setExcluded = _ref.setExcluded;
+  // sortablejs needs items as objects with at least the `id` field.
+  var includedItems = make_sortablejs_items(included);
+  var excludedItems = make_sortablejs_items(excluded);
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "DashSeqaln-select"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "DashSeqaln-included"
@@ -36603,7 +36602,23 @@ function DashSeqaln(props) {
       key: item.id,
       className: "SortableItem"
     }, item.name);
-  })))));
+  }))));
+}
+function listdiff(l1, l2) {
+  return l1.filter(function (x) {
+    return !l2.includes(x);
+  });
+}
+function make_sortablejs_items(l) {
+  return l.map(function (item) {
+    return {
+      id: "sortable-" + item,
+      selected: false,
+      chosen: false,
+      filtered: false,
+      name: item
+    };
+  });
 }
 DashSeqaln.defaultProps = {};
 DashSeqaln.propTypes = {
@@ -36616,9 +36631,9 @@ DashSeqaln.propTypes = {
    */
   title: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string.isRequired,
   /**
-   * An object containing the MSA as strings.
+   * An iterable containing the sequences as objects with `id` and `seq` fields.
    */
-  aln: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.object,
+  alignment: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.array,
   /**
    * Object of numeric lists for the bar plots.
    */
