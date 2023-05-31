@@ -22,6 +22,7 @@ app.layout = html.Div([
         id='input',
         title='my msa',
         alignment=sampleAln,
+        color_scheme="ClustalX",
         included=list(sampleAln.keys()),
         excluded=[],
         series=sampleSeries,

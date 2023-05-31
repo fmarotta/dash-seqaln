@@ -27,6 +27,7 @@ class App extends Component {
             included: Object.keys(sampleAln),
             excluded: [],
             series: sampleSeries,
+            color_scheme: "Flower",
             allow_sequence_selection: true,
         };
         this.setProps = this.setProps.bind(this);

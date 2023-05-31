@@ -18,16 +18,20 @@ python setup.py sdist bdist_wheel
 
 * [x] show msa as table
 * [x] show histograms
-* [] color the msa
+* [x] color the msa
 * [] support clicking rows or cols
+  * [] click seqid => ?
+  * [] click bar in bar plot => ?
+  * [] click residue => ?
+* [] overing residue shows a popup with its actual position in the sequence (not in the aln), OR ability to choose one sequence as reference
 * [x] scale the height of the histograms between a and b
 * [x] series should be a list of dict. the dict should be {label, values, color, scale}
 * ~[] maybe, make aln compatible with BioPython and series compatible with plotly~ (AlignIO is a class, we need a dict)
-* [] add a row for the structure (maybe a row for each sequence?)
+* [] add a row for the secondary structure (maybe a row for each sequence?)
 * [x] add position on the x axis, scale on the y axis (for series), or sequence number (for sequences)
-* [] ability to choose one sequence as reference
 * [] show letters or hide them
 * [] change the width of the <td>s to zoom out
+* [] reorganise css class names (e.g. all labels should be the same)
 
 # dash_seqaln
 

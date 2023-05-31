@@ -2,9 +2,11 @@
   font-family: monospace;
 }
 
-.DashSeqaln table .series-label,.aln-label {
+.DashSeqaln table td.series-label,
+.DashSeqaln table td.aln-label {
   padding-right: 30px;
-  font-weight: bold
+  font-weight: bold;
+  text-align: left;
 }
 
 .DashSeqaln table td {

@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import PropTypes from 'prop-types';
 import { ReactSortable } from 'react-sortablejs';
 import './DashSeqaln.react.css';
+import { color_msa_column } from '../msa_color_schemes.js';
 
 // NOTE: series values must be scaled between 0 and 1
 
@@ -10,7 +11,7 @@ import './DashSeqaln.react.css';
  */
 export default function DashSeqaln(props) {
   const {id, title, alignment, included, excluded, series, setProps} = props;
-  const {allow_sequence_selection, show_letters, show_seqnum, zoom} = props;
+  const {color_scheme, allow_sequence_selection, show_letters, show_seqnum, zoom} = props;
   const setIncluded = (items) => {
     setProps({included: items.map((x) => x.name)});
   };
@@ -27,6 +28,7 @@ export default function DashSeqaln(props) {
       setExcluded: setExcluded
     });
   }
+  const alignment_colors = make_color_scheme(alignment, color_scheme);
   const aln_breaks = [];
   for (let i = 0; i < alignment[Object.keys(alignment)[0]].length; i++) {
     if (i % 10 === 0)
@@ -63,7 +65,7 @@ export default function DashSeqaln(props) {
             <td className="aln-label">{seqId}</td>
             <td className="aln-seqnum">{show_seqnum ? seqIndex : ""}</td>
             {alignment[seqId].split("").map((letter, index) => (
-              <td key={"aln-"+index}>{letter}</td>
+              <td key={"aln-"+index} style={{"backgroundColor": alignment_colors[seqId][index]}}>{letter}</td>
             ))}
           </tr>
         ))}
@@ -89,6 +91,24 @@ function make_series_scale() {
     </>
   );
 }
+
+function make_color_scheme(alignment, scheme) {
+  const seqIds = Object.keys(alignment);
+  const aln_length = alignment[seqIds[0]].length;
+  const colors = {};
+  seqIds.forEach((id) => colors[id] = []);
+  console.log(colors);
+  for (let i = 0; i < aln_length; i++) {
+    const column = [];
+    for (const seqId of seqIds) {
+      column.push(alignment[seqId][i]);
+    }
+    let column_colors = color_msa_column(column, scheme);
+    seqIds.forEach((id, index) => colors[id].push(column_colors[index]));
+  }
+  return colors;
+}
+
 
 function DashSeqalnSelect({id, included, excluded, setIncluded, setExcluded}) {
   // sortablejs needs items as objects with at least the `id` field.
@@ -148,6 +168,11 @@ DashSeqaln.propTypes = {
      * List of objects, each containing the data for a bar plot.
      */
     series: PropTypes.array,
+
+    /**
+     * The color scheme for the alignment, from Jalview.
+     */
+    color_scheme: PropTypes.string,
 
     /**
      * List of sequence IDs to show in the alignment.

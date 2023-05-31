@@ -10,14 +10,16 @@ ExampleComponent is an example component.
 }
 
 \usage{
-dashSeqaln(id=NULL, alignment=NULL, excluded=NULL, included=NULL,
-series=NULL, title=NULL)
+dashSeqaln(id=NULL, alignment=NULL, color_scheme=NULL, excluded=NULL,
+included=NULL, series=NULL, title=NULL)
 }
 
 \arguments{
 \item{id}{Character. The ID used to identify this component in Dash callbacks.}
 
 \item{alignment}{Named list. An object representing the MSA.}
+
+\item{color_scheme}{Character. The color scheme for the alignment, from Jalview.}
 
 \item{excluded}{Unnamed list. List of sequence IDs to NOT show in the alignment.}
 

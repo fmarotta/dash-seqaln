@@ -18,6 +18,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_sortablejs__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_sortablejs__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _DashSeqaln_react_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./DashSeqaln.react.css */ "./src/lib/components/DashSeqaln.react.css");
 /* harmony import */ var _DashSeqaln_react_css__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_DashSeqaln_react_css__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _msa_color_schemes_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../msa_color_schemes.js */ "./src/lib/msa_color_schemes.js");
+
 
 
 
@@ -36,7 +38,8 @@ function DashSeqaln(props) {
     excluded = props.excluded,
     series = props.series,
     setProps = props.setProps;
-  var allow_sequence_selection = props.allow_sequence_selection,
+  var color_scheme = props.color_scheme,
+    allow_sequence_selection = props.allow_sequence_selection,
     show_letters = props.show_letters,
     show_seqnum = props.show_seqnum,
     zoom = props.zoom;
@@ -64,6 +67,7 @@ function DashSeqaln(props) {
       setExcluded: setExcluded
     });
   }
+  var alignment_colors = make_color_scheme(alignment, color_scheme);
   var aln_breaks = [];
   for (var i = 0; i < alignment[Object.keys(alignment)[0]].length; i++) {
     if (i % 10 === 0) aln_breaks.push(String(i + 1));else aln_breaks.push("");
@@ -119,7 +123,10 @@ function DashSeqaln(props) {
       className: "aln-seqnum"
     }, show_seqnum ? seqIndex : ""), alignment[seqId].split("").map(function (letter, index) {
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
-        key: "aln-" + index
+        key: "aln-" + index,
+        style: {
+          "backgroundColor": alignment_colors[seqId][index]
+        }
       }, letter);
     }));
   }))), sequence_selection_component);
@@ -146,6 +153,30 @@ function make_series_scale() {
       }
     }, x.toFixed(1)));
   }));
+}
+function make_color_scheme(alignment, scheme) {
+  var seqIds = Object.keys(alignment);
+  var aln_length = alignment[seqIds[0]].length;
+  var colors = {};
+  seqIds.forEach(function (id) {
+    return colors[id] = [];
+  });
+  console.log(colors);
+  var _loop = function _loop() {
+    var column = [];
+    for (var _i = 0, _seqIds = seqIds; _i < _seqIds.length; _i++) {
+      var seqId = _seqIds[_i];
+      column.push(alignment[seqId][i]);
+    }
+    var column_colors = Object(_msa_color_schemes_js__WEBPACK_IMPORTED_MODULE_4__["color_msa_column"])(column, scheme);
+    seqIds.forEach(function (id, index) {
+      return colors[id].push(column_colors[index]);
+    });
+  };
+  for (var i = 0; i < aln_length; i++) {
+    _loop();
+  }
+  return colors;
 }
 function DashSeqalnSelect(_ref) {
   var id = _ref.id,
@@ -218,6 +249,10 @@ DashSeqaln.propTypes = {
    * List of objects, each containing the data for a bar plot.
    */
   series: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.array,
+  /**
+   * The color scheme for the alignment, from Jalview.
+   */
+  color_scheme: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string,
   /**
    * List of sequence IDs to show in the alignment.
    */
