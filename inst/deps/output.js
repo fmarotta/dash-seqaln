@@ -64,7 +64,7 @@ window["dash_seqaln"] =
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "73acc8c20045c6374fd3";
+/******/ 	var hotCurrentHash = "0a0343d2793f737904a1";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -836,7 +836,7 @@ window["dash_seqaln"] =
 /******/ 	        var srcFragments = src.split('/');
 /******/ 	        var fileFragments = srcFragments.slice(-1)[0].split('.');
 /******/
-/******/ 	        fileFragments.splice(1, 0, "v0_0_1m1685540020");
+/******/ 	        fileFragments.splice(1, 0, "v0_0_1m1685544382");
 /******/ 	        srcFragments.splice(-1, 1, fileFragments.join('.'))
 /******/
 /******/ 	        return srcFragments.join('/');
@@ -933,7 +933,7 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, ".DashSeqaln table {\n  font-family: monospace;\n}\n\n.DashSeqaln table .series-label,.aln-label {\n  padding-right: 15px;\n  font-weight: bold\n}\n\n.DashSeqaln table td {\n  vertical-align: bottom;\n}\n\n.DashSeqaln .Sortable {\n  margin-top: 20px;\n}\n\n.DashSeqaln .Sortable .SortableItem {\n  padding: 5px;\n  border: 1px solid gray;\n}\n\n.DashSeqaln .DashSeqaln-select {\n  display: flex;\n  flex-flow: row wrap;\n  justify-content: space-between;\n}\n\n.DashSeqaln .DashSeqaln-select .DashSeqaln-included,.DashSeqaln-excluded {\n  width: 45%;\n  min-width: 250px;\n}\n\n.DashSeqaln .DashSeqaln-select .DashSeqaln-included div, .DashSeqaln .DashSeqaln-select .DashSeqaln-excluded div {\n  padding: 5px;\n  border: 1px solid black;\n}\n", ""]);
+exports.push([module.i, ".DashSeqaln table {\n  font-family: monospace;\n}\n\n.DashSeqaln table .series-label,.aln-label {\n  padding-right: 30px;\n  font-weight: bold\n}\n\n.DashSeqaln table td {\n  vertical-align: bottom;\n  text-align: center;\n}\n\n.DashSeqAln table .aln-axis {\n  font-size: small;\n  margin-bottom: 2px;\n  margin-top: 3px;\n}\n\n.DashSeqAln table .aln-seqnum {\n  font-size: smaller;\n  padding-right: 5px;\n  vertical-align: middle;\n}\n\n.DashSeqAln table .series-scale {\n  font-size: smaller;\n}\n\n.DashSeqaln .Sortable {\n  margin-top: 20px;\n}\n\n.DashSeqaln .Sortable .SortableItem {\n  padding: 5px;\n  border: 1px solid gray;\n}\n\n.DashSeqaln .DashSeqaln-select {\n  display: flex;\n  flex-flow: row wrap;\n  justify-content: space-between;\n}\n\n.DashSeqaln .DashSeqaln-select .DashSeqaln-included,.DashSeqaln-excluded {\n  width: 45%;\n  min-width: 250px;\n}\n\n.DashSeqaln .DashSeqaln-select .DashSeqaln-included div, .DashSeqaln .DashSeqaln-select .DashSeqaln-excluded div {\n  padding: 5px;\n  border: 1px solid black;\n}\n", ""]);
 // Exports
 module.exports = exports;
 
@@ -36350,7 +36350,7 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 
 var sampleSeries = [{
   label: "Entropy",
-  values: [0, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 0.3, 0.5, 0.2, 0.7, 0.9, 1],
+  values: [0.1, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 0.3, 0.5, 0.2, 0.7, 0.9, 1],
   color: "green",
   height: "100px"
 }];
@@ -36495,6 +36495,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+// NOTE: series values must be scaled between 0 and 1
+
 /**
  * ExampleComponent is an example component.
  */
@@ -36508,6 +36510,7 @@ function DashSeqaln(props) {
     setProps = props.setProps;
   var allow_sequence_selection = props.allow_sequence_selection,
     show_letters = props.show_letters,
+    show_seqnum = props.show_seqnum,
     zoom = props.zoom;
   var setIncluded = function setIncluded(items) {
     setProps({
@@ -36533,6 +36536,10 @@ function DashSeqaln(props) {
       setExcluded: setExcluded
     });
   }
+  var aln_breaks = [];
+  for (var i = 0; i < alignment[Object.keys(alignment)[0]].length; i++) {
+    if (i % 10 === 0) aln_breaks.push(String(i + 1));else aln_breaks.push("");
+  }
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     id: id,
     className: "DashSeqaln"
@@ -36541,7 +36548,13 @@ function DashSeqaln(props) {
       key: "series-" + seriesItem.label
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
       className: "series-label"
-    }, seriesItem.label), seriesItem.values.map(function (value, index) {
+    }, seriesItem.label), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
+      className: "series-scale",
+      style: {
+        "position": "relative",
+        "borderRight": "1px solid black"
+      }
+    }, make_series_scale()), seriesItem.values.map(function (value, index) {
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
         key: "series-" + index,
         style: {
@@ -36561,17 +36574,50 @@ function DashSeqaln(props) {
         "border": "dashed 1px lightGray"
       }
     }))));
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tbody", null, included.map(function (seqId) {
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tbody", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
+    className: "aln-axis-label"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
+    className: "aln-axis-seqnum"
+  }), aln_breaks.map(function (x) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
+      className: "aln-axis"
+    }, x);
+  })), included.map(function (seqId, seqIndex) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", {
       key: "aln-" + seqId
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
       className: "aln-label"
-    }, seqId), alignment[seqId].split("").map(function (letter, index) {
+    }, seqId), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
+      className: "aln-seqnum"
+    }, show_seqnum ? seqIndex : ""), alignment[seqId].split("").map(function (letter, index) {
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
         key: "aln-" + index
       }, letter);
     }));
   }))), sequence_selection_component);
+}
+function make_series_scale() {
+  // for now we ignore the range and use a default scale for everything
+  var breaks = [0, 0.5, 1];
+  var breaks_width = "8px";
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, breaks.map(function (x) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      style: {
+        "position": "absolute",
+        "bottom": "".concat(x * 100, "%"),
+        "width": breaks_width,
+        "left": "calc(100% - ".concat(breaks_width, " + 1px)"),
+        "borderBottom": "0.5px solid black"
+      }
+    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      style: {
+        "position": "absolute",
+        "bottom": "".concat(x * 100, "%"),
+        "left": "calc(100% - ".concat(breaks_width, " + 1px)"),
+        "transform": "translate(-100%, 0)"
+      }
+    }, x.toFixed(1)));
+  }));
 }
 function DashSeqalnSelect(_ref) {
   var id = _ref.id,

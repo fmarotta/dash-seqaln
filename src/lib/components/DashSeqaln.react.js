@@ -10,7 +10,7 @@ import './DashSeqaln.react.css';
  */
 export default function DashSeqaln(props) {
   const {id, title, alignment, included, excluded, series, setProps} = props;
-  const {allow_sequence_selection, show_letters, zoom} = props;
+  const {allow_sequence_selection, show_letters, show_seqnum, zoom} = props;
   const setIncluded = (items) => {
     setProps({included: items.map((x) => x.name)});
   };
@@ -27,6 +27,13 @@ export default function DashSeqaln(props) {
       setExcluded: setExcluded
     });
   }
+  const aln_breaks = [];
+  for (let i = 0; i < alignment[Object.keys(alignment)[0]].length; i++) {
+    if (i % 10 === 0)
+      aln_breaks.push(String(i+1));
+    else
+      aln_breaks.push("");
+  }
   return (
     <div id={id} className="DashSeqaln">
       <h2>{title}</h2>
@@ -35,6 +42,7 @@ export default function DashSeqaln(props) {
           <thead key={"series-"+seriesItem.label}>
           <tr>
             <td className="series-label">{seriesItem.label}</td>
+            <td className="series-scale" style={{"position": "relative", "borderRight": "1px solid black"}}>{make_series_scale()}</td>
             {seriesItem.values.map((value, index) => (
               <td key={"series-"+index} style={{"height": seriesItem.height}}>
                 <div style={{"backgroundColor": seriesItem.color, "height": (100 * value) + "%"}}></div>
@@ -45,9 +53,15 @@ export default function DashSeqaln(props) {
           </thead>
         ))}
       <tbody>
-        {included.map((seqId) => (
+        <tr>
+          <td className="aln-axis-label"></td>
+          <td className="aln-axis-seqnum"></td>
+          {aln_breaks.map((x) => <td className="aln-axis">{x}</td>)}
+        </tr>
+        {included.map((seqId, seqIndex) => (
           <tr key={"aln-"+seqId}>
             <td className="aln-label">{seqId}</td>
+            <td className="aln-seqnum">{show_seqnum ? seqIndex : ""}</td>
             {alignment[seqId].split("").map((letter, index) => (
               <td key={"aln-"+index}>{letter}</td>
             ))}
@@ -57,6 +71,22 @@ export default function DashSeqaln(props) {
       </table>
       {sequence_selection_component}
     </div>
+  );
+}
+
+function make_series_scale() {
+  // for now we ignore the range and use a default scale for everything
+  const breaks = [0, 0.5, 1];
+  const breaks_width = "8px";
+  return (
+    <>
+    {breaks.map((x) => (
+      <>
+        <div style={{"position": "absolute", "bottom": `${x * 100}%`, "width": breaks_width, "left": `calc(100% - ${breaks_width} + 1px)`, "borderBottom": "0.5px solid black"}}></div>
+        <div style={{"position": "absolute", "bottom": `${x * 100}%`, "left": `calc(100% - ${breaks_width} + 1px)`, "transform": "translate(-100%, 0)"}}>{x.toFixed(1)}</div>
+      </>
+    ))}
+    </>
   );
 }
 

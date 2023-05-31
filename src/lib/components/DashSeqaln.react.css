@@ -3,12 +3,29 @@
 }
 
 .DashSeqaln table .series-label,.aln-label {
-  padding-right: 15px;
+  padding-right: 30px;
   font-weight: bold
 }
 
 .DashSeqaln table td {
   vertical-align: bottom;
+  text-align: center;
+}
+
+.DashSeqAln table .aln-axis {
+  font-size: small;
+  margin-bottom: 2px;
+  margin-top: 3px;
+}
+
+.DashSeqAln table .aln-seqnum {
+  font-size: smaller;
+  padding-right: 5px;
+  vertical-align: middle;
+}
+
+.DashSeqAln table .series-scale {
+  font-size: smaller;
 }
 
 .DashSeqaln .Sortable {

@@ -24,7 +24,7 @@ python setup.py sdist bdist_wheel
 * [x] series should be a list of dict. the dict should be {label, values, color, scale}
 * ~[] maybe, make aln compatible with BioPython and series compatible with plotly~ (AlignIO is a class, we need a dict)
 * [] add a row for the structure (maybe a row for each sequence?)
-* [] add position on the x axis, scale on the y axis (for series), or sequence number (for sequences)
+* [x] add position on the x axis, scale on the y axis (for series), or sequence number (for sequences)
 * [] ability to choose one sequence as reference
 * [] show letters or hide them
 * [] change the width of the <td>s to zoom out

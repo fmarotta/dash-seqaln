@@ -23,6 +23,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+// NOTE: series values must be scaled between 0 and 1
+
 /**
  * ExampleComponent is an example component.
  */
@@ -36,6 +38,7 @@ function DashSeqaln(props) {
     setProps = props.setProps;
   var allow_sequence_selection = props.allow_sequence_selection,
     show_letters = props.show_letters,
+    show_seqnum = props.show_seqnum,
     zoom = props.zoom;
   var setIncluded = function setIncluded(items) {
     setProps({
@@ -61,6 +64,10 @@ function DashSeqaln(props) {
       setExcluded: setExcluded
     });
   }
+  var aln_breaks = [];
+  for (var i = 0; i < alignment[Object.keys(alignment)[0]].length; i++) {
+    if (i % 10 === 0) aln_breaks.push(String(i + 1));else aln_breaks.push("");
+  }
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     id: id,
     className: "DashSeqaln"
@@ -69,7 +76,13 @@ function DashSeqaln(props) {
       key: "series-" + seriesItem.label
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
       className: "series-label"
-    }, seriesItem.label), seriesItem.values.map(function (value, index) {
+    }, seriesItem.label), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
+      className: "series-scale",
+      style: {
+        "position": "relative",
+        "borderRight": "1px solid black"
+      }
+    }, make_series_scale()), seriesItem.values.map(function (value, index) {
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
         key: "series-" + index,
         style: {
@@ -89,17 +102,50 @@ function DashSeqaln(props) {
         "border": "dashed 1px lightGray"
       }
     }))));
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tbody", null, included.map(function (seqId) {
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tbody", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
+    className: "aln-axis-label"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
+    className: "aln-axis-seqnum"
+  }), aln_breaks.map(function (x) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
+      className: "aln-axis"
+    }, x);
+  })), included.map(function (seqId, seqIndex) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", {
       key: "aln-" + seqId
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
       className: "aln-label"
-    }, seqId), alignment[seqId].split("").map(function (letter, index) {
+    }, seqId), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
+      className: "aln-seqnum"
+    }, show_seqnum ? seqIndex : ""), alignment[seqId].split("").map(function (letter, index) {
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
         key: "aln-" + index
       }, letter);
     }));
   }))), sequence_selection_component);
+}
+function make_series_scale() {
+  // for now we ignore the range and use a default scale for everything
+  var breaks = [0, 0.5, 1];
+  var breaks_width = "8px";
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, breaks.map(function (x) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      style: {
+        "position": "absolute",
+        "bottom": "".concat(x * 100, "%"),
+        "width": breaks_width,
+        "left": "calc(100% - ".concat(breaks_width, " + 1px)"),
+        "borderBottom": "0.5px solid black"
+      }
+    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      style: {
+        "position": "absolute",
+        "bottom": "".concat(x * 100, "%"),
+        "left": "calc(100% - ".concat(breaks_width, " + 1px)"),
+        "transform": "translate(-100%, 0)"
+      }
+    }, x.toFixed(1)));
+  }));
 }
 function DashSeqalnSelect(_ref) {
   var id = _ref.id,
