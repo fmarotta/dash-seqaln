@@ -82,11 +82,11 @@ function make_series_scale() {
   const breaks_width = "8px";
   return (
     <>
-    {breaks.map((x) => (
-      <>
-        <div style={{"position": "absolute", "bottom": `${x * 100}%`, "width": breaks_width, "left": `calc(100% - ${breaks_width} + 1px)`, "borderBottom": "0.5px solid black"}}></div>
-        <div style={{"position": "absolute", "bottom": `${x * 100}%`, "left": `calc(100% - ${breaks_width} + 1px)`, "transform": "translate(-100%, 0)"}}>{x.toFixed(1)}</div>
-      </>
+    {breaks.map((x, i) => (
+      <div key={"break-"+i} style={{"position": "absolute", "bottom": `${x * 100}%`, "width": breaks_width, "left": `calc(100% - ${breaks_width} + 1px)`, "borderBottom": "0.5px solid black"}}></div>
+    ))}
+    {breaks.map((x, i) => (
+      <div  key={"breaklabel-"+i}style={{"position": "absolute", "bottom": `${x * 100}%`, "left": `calc(100% - ${breaks_width} + 1px)`, "transform": "translate(-100%, 0)"}}>{x.toFixed(1)}</div>
     ))}
     </>
   );
