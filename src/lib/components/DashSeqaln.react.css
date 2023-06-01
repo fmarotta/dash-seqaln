@@ -26,6 +26,24 @@
   vertical-align: middle;
 }
 
+.DashSeqAln .aln-letter:hover {
+  cursor: default;
+}
+
+.DashSeqAln .aln-letter:hover .aln-letter-tooltip {
+  visibility: visible;
+}
+
+.DashSeqAln .aln-letter-tooltip {
+  position: absolute;
+  z-index: 1;
+  visibility: hidden;
+  bottom: 100%;
+  background-color: lightgray;
+  padding: 2px;
+  border-radius: 5px;
+}
+
 .DashSeqAln table .series-scale {
   font-size: smaller;
 }

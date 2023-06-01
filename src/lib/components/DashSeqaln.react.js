@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState, useMemo } from 'react';
 import PropTypes from 'prop-types';
 import { ReactSortable } from 'react-sortablejs';
 import './DashSeqaln.react.css';
@@ -28,6 +28,7 @@ export default function DashSeqaln(props) {
       setExcluded: setExcluded
     });
   }
+  const alignment_cumsum = useMemo(() => get_alignment_cumsum(alignment), [alignment]);
   const alignment_colors = make_color_scheme(alignment, color_scheme);
   const aln_breaks = [];
   for (let i = 0; i < alignment[Object.keys(alignment)[0]].length; i++) {
@@ -65,7 +66,11 @@ export default function DashSeqaln(props) {
             <td className="aln-label">{seqId}</td>
             <td className="aln-seqnum">{show_seqnum ? seqIndex : ""}</td>
             {alignment[seqId].split("").map((letter, index) => (
-              <td key={"aln-"+index} style={{"backgroundColor": alignment_colors[seqId][index], "width": "10px"}}>{show_letters ? letter : ""}</td>
+              <td
+                key={"aln-"+index}
+                style={{"backgroundColor": alignment_colors[seqId][index], "width": "10px", "position": "relative"}}
+                className="aln-letter"
+              >{show_letters ? letter : ""}{letter !== "-" && (<span className="aln-letter-tooltip">{seqId + ":" + alignment_cumsum[seqId][index]}</span>)}</td>
             ))}
           </tr>
         ))}
@@ -109,6 +114,18 @@ function make_color_scheme(alignment, scheme) {
   return colors;
 }
 
+function get_alignment_cumsum(alignment) {
+  const res = {};
+  for (const [key, val] of Object.entries(alignment)) {
+    res[key] = [];
+    let cumsum = 0;
+    for (let x of val) {
+      cumsum += (x === "-" ? 0 : 1);
+      res[key].push(cumsum);
+    }
+  }
+  return res;
+}
 
 function DashSeqalnSelect({id, included, excluded, setIncluded, setExcluded}) {
   // sortablejs needs items as objects with at least the `id` field.

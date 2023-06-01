@@ -23,7 +23,7 @@ python setup.py sdist bdist_wheel
   * [] click seqid => ?
   * [] click bar in bar plot => ?
   * [] click residue => ?
-* [] overing residue shows a popup with its actual position in the sequence (not in the aln), OR ability to choose one sequence as reference
+* [x] overing residue shows a popup with its actual position in the sequence (not in the aln), OR ability to choose one sequence as reference
 * [x] scale the height of the histograms between a and b
 * [x] series should be a list of dict. the dict should be {label, values, color, scale}
 * ~[] maybe, make aln compatible with BioPython and series compatible with plotly~ (AlignIO is a class, we need a dict)
