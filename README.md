@@ -31,7 +31,7 @@ python setup.py sdist bdist_wheel
 * [x] add position on the x axis, scale on the y axis (for series), or sequence number (for sequences)
 * [x] show letters or hide them
 * [x] change the width of the <td>s to zoom out
-* [] reorganise css class names (e.g. all labels should be the same)
+* [x] reorganise css class names (e.g. all labels should be the same)
 
 # dash_seqaln
 

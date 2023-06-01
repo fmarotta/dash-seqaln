@@ -1,74 +1,98 @@
+.DashSeqaln .title {
+}
+
 .DashSeqaln table {
   font-family: monospace;
+  border-spacing: 0px;
 }
 
-.DashSeqaln table td.series-label,
-.DashSeqaln table td.aln-label {
+.DashSeqaln .series {
+}
+
+.DashSeqaln .series-label {
   padding-right: 30px;
   font-weight: bold;
-  text-align: left;
-}
-
-.DashSeqaln table td {
   vertical-align: bottom;
-  text-align: center;
 }
 
-.DashSeqAln table .aln-axis {
+.DashSeqaln .series-scale {
+  font-size: smaller;
+}
+
+.DashSeqaln .series-values {
+  vertical-align: bottom;
+}
+
+.DashSeqaln .series-separator {
+  height: 0px;
+  padding: 0px;
+  border: dashed 1px lightgray;
+}
+
+.DashSeqaln .aln {
+}
+
+.DashSeqaln .aln-axis {
   font-size: small;
   margin-bottom: 2px;
   margin-top: 3px;
+  text-align: center;
 }
 
-.DashSeqAln table .aln-seqnum {
+.DashSeqaln .aln-label {
+  padding-right: 30px;
+  font-weight: bold;
+}
+
+.DashSeqaln .aln-seqnum {
   font-size: smaller;
   padding-right: 5px;
   vertical-align: middle;
 }
 
-.DashSeqAln .aln-letter:hover {
+.DashSeqaln .aln-letter {
   cursor: default;
+  text-align: center;
+  position: relative; /* don't change me */
 }
 
-.DashSeqAln .aln-letter:hover .aln-letter-tooltip {
-  visibility: visible;
+.DashSeqaln .aln-letter:hover .aln-letter-tooltip {
+  visibility: visible; /* don't change me */
 }
 
-.DashSeqAln .aln-letter-tooltip {
-  position: absolute;
-  z-index: 1;
-  visibility: hidden;
+.DashSeqaln .aln-letter-tooltip {
+  position: absolute; /* don't change me */
+  z-index: 1; /* don't change me */
+  visibility: hidden; /* don't change me */
   bottom: 100%;
   background-color: lightgray;
   padding: 2px;
   border-radius: 5px;
 }
 
-.DashSeqAln table .series-scale {
-  font-size: smaller;
-}
-
-.DashSeqaln .Sortable {
-  margin-top: 20px;
-}
-
-.DashSeqaln .Sortable .SortableItem {
-  padding: 5px;
-  border: 1px solid gray;
-}
-
-.DashSeqaln .DashSeqaln-select {
+.DashSeqaln .seqselection {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
 }
 
-.DashSeqaln .DashSeqaln-select .DashSeqaln-included,.DashSeqaln-excluded {
+.DashSeqaln .seqselection-included,.seqselection-excluded {
   width: 45%;
   min-width: 250px;
 }
 
-.DashSeqaln .DashSeqaln-select .DashSeqaln-included div, .DashSeqaln .DashSeqaln-select .DashSeqaln-excluded div {
+.DashSeqaln .seqselection-sortable {
+  margin-top: 20px;
   padding: 5px;
   border: 1px solid black;
+}
+
+.DashSeqaln .seqselection-sortable-item {
+  padding: 5px;
+  border: 1px solid gray;
+}
+
+.DashSeqaln .seqselection-excluded .seqselection-message {
+  font-size: small;
+  margin: 0px;
 }

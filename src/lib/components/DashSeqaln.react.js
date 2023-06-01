@@ -11,7 +11,7 @@ import { color_msa_column } from '../msa_color_schemes.js';
  */
 export default function DashSeqaln(props) {
   const {id, title, alignment, included, excluded, series, color_scheme, setProps} = props;
-  const {allow_sequence_selection = true, show_letters = true, show_seqnum = false, zoom = "10px", border_spacing = "0px"} = props;
+  const {allow_sequence_selection = true, show_letters = true, show_seqnum = false, zoom = 10} = props;
   const setIncluded = (items) => {
     setProps({included: items.map((x) => x.name)});
   };
@@ -20,7 +20,7 @@ export default function DashSeqaln(props) {
   };
   let sequence_selection_component = <></>;
   if (allow_sequence_selection === true) {
-    sequence_selection_component = DashSeqalnSelect({
+    sequence_selection_component = Seqselection({
       id: id,
       included: included,
       excluded: excluded,
@@ -29,7 +29,7 @@ export default function DashSeqaln(props) {
     });
   }
   const alignment_cumsum = useMemo(() => get_alignment_cumsum(alignment), [alignment]);
-  const alignment_colors = make_color_scheme(alignment, color_scheme);
+  const alignment_colors = useMemo(() => make_color_scheme(alignment, color_scheme), [alignment, color_scheme]);
   const aln_breaks = [];
   for (let i = 0; i < alignment[Object.keys(alignment)[0]].length; i++) {
     if (i % 10 === 0)
@@ -39,27 +39,35 @@ export default function DashSeqaln(props) {
   }
   return (
     <div id={id} className="DashSeqaln">
-      <h2>{title}</h2>
-      <table style={{"borderSpacing": border_spacing}}>
+      {title && (<h2 className="title">{title}</h2>)}
+      <table>
         {series.map((seriesItem) => (
-          <thead key={"series-"+seriesItem.label}>
+          <thead key={"series-"+seriesItem.label} className="series">
           <tr>
-            <td className="series-label">{seriesItem.label}</td>
-            <td className="series-scale" style={{"position": "relative", "borderRight": "1px solid black"}}>{make_series_scale()}</td>
+            <td className="series-label">
+              {seriesItem.label}
+            </td>
+            <td className="series-scale" style={{"position": "relative", "borderRight": "1px solid black"}}>
+              {make_series_scale()}
+            </td>
             {seriesItem.values.map((value, index) => (
-              <td key={"series-"+index} style={{"height": seriesItem.height}}>
-                <div style={{"backgroundColor": seriesItem.color, "height": (100 * value) + "%"}}></div>
+              <td key={"series-"+index} className="series-values" style={{"height": seriesItem.height || "100px"}}>
+                <div style={{"backgroundColor": seriesItem.color || "black", "height": (100 * value) + "%"}}></div>
               </td>
             ))}
           </tr>
-          <tr><td colSpan="100%"><hr style={{"margin": "0px", "border": "dashed 1px lightGray"}}></hr></td></tr>
+          <tr><td colSpan="100%" className="series-separator"></td></tr>
           </thead>
         ))}
-      <tbody>
-        <tr>
+      <tbody className="aln">
+        <tr className="aln-axis">
           <td className="aln-axis-label"></td>
           <td className="aln-axis-seqnum"></td>
-          {aln_breaks.map((x, index) => <td key={"aln-resnum-"+index} className="aln-axis"><div style={{"width": "0px"}}>{x}</div></td>)}
+          {aln_breaks.map((x, index) => (
+            <td key={"aln-axis-resnum-"+index} className="aln-axis-resnum">
+              <span style={{"width": "0px"}}>{x}</span>
+            </td>
+          ))}
         </tr>
         {included.map((seqId, seqIndex) => (
           <tr key={"aln-"+seqId}>
@@ -68,9 +76,14 @@ export default function DashSeqaln(props) {
             {alignment[seqId].split("").map((letter, index) => (
               <td
                 key={"aln-"+index}
-                style={{"backgroundColor": alignment_colors[seqId][index], "width": "10px", "position": "relative"}}
                 className="aln-letter"
-              >{show_letters ? letter : ""}{letter !== "-" && (<span className="aln-letter-tooltip">{seqId + ":" + alignment_cumsum[seqId][index]}</span>)}</td>
+                style={{"backgroundColor": alignment_colors[seqId][index], "width": zoom + "px"}}
+              >
+                {show_letters ? letter : ""}
+                {letter !== "-" && (
+                  <span className="aln-letter-tooltip">{seqId + ":" + alignment_cumsum[seqId][index]}</span>
+                )}
+              </td>
             ))}
           </tr>
         ))}
@@ -102,12 +115,8 @@ function make_color_scheme(alignment, scheme) {
   const aln_length = alignment[seqIds[0]].length;
   const colors = {};
   seqIds.forEach((id) => colors[id] = []);
-  console.log(colors);
   for (let i = 0; i < aln_length; i++) {
-    const column = [];
-    for (const seqId of seqIds) {
-      column.push(alignment[seqId][i]);
-    }
+    let column = seqIds.map((id) => alignment[id][i]);
     let column_colors = color_msa_column(column, scheme);
     seqIds.forEach((id, index) => colors[id].push(column_colors[index]));
   }
@@ -127,30 +136,29 @@ function get_alignment_cumsum(alignment) {
   return res;
 }
 
-function DashSeqalnSelect({id, included, excluded, setIncluded, setExcluded}) {
+function Seqselection({id, included, excluded, setIncluded, setExcluded}) {
   // sortablejs needs items as objects with at least the `id` field.
   const includedItems = make_sortablejs_items(included);
   const excludedItems = make_sortablejs_items(excluded);
   return (
-    <div className="DashSeqaln-select">
-      <div className="DashSeqaln-included">
+    <div className="seqselection">
+      <div className="seqselection-included">
         <h3>Included sequences</h3>
-        <ReactSortable group={"DashSeqaln-"+id} list={includedItems} setList={setIncluded} className="Sortable">
-          {includedItems.map((item) => (<div key={item.id} className="SortableItem">{item.name}</div>))}
+        <ReactSortable group={"seqselection-"+id} list={includedItems} setList={setIncluded} className="seqselection-sortable">
+          {includedItems.map((item) => (<div key={item.id} className="seqselection-sortable-item">{item.name}</div>))}
         </ReactSortable>
       </div>
-      <div className="DashSeqaln-excluded">
+      <div className="seqselection-excluded">
         <h3>Excluded sequences</h3>
-        <ReactSortable group={"DashSeqaln-"+id} list={excludedItems} setList={setExcluded} className="Sortable">
-          {excludedItems.map((item) => (<div key={item.id} className="SortableItem">{item.name}</div>))}
+        <ReactSortable group={"seqselection-"+id} list={excludedItems} setList={setExcluded} className="seqselection-sortable">
+          {excluded.length ?
+            excludedItems.map((item) => (<div key={item.id} className="seqselection-sortable-item">{item.name}</div>)) :
+            <p className="seqselection-message">Drag and drop a sequence ID here to remove it from the alignment.</p>
+          }
         </ReactSortable>
       </div>
     </div>
   );
-}
-
-function listdiff(l1, l2) {
-  return l1.filter((x) => !l2.includes(x));
 }
 
 function make_sortablejs_items(l) {
