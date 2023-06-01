@@ -19,10 +19,8 @@ python setup.py sdist bdist_wheel
 * [x] show msa as table
 * [x] show histograms
 * [x] color the msa
-* [] support clicking rows or cols
-  * [] click seqid => ?
-  * [] click bar in bar plot => ?
-  * [] click residue => ?
+* ~[] support clicking rows or cols~ (What action should be triggered?)
+* [] add a textbox to the right where user can write own annotations
 * [x] overing residue shows a popup with its actual position in the sequence (not in the aln), OR ability to choose one sequence as reference
 * [x] scale the height of the histograms between a and b
 * [x] series should be a list of dict. the dict should be {label, values, color, scale}

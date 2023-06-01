@@ -14,7 +14,7 @@ window["dash_seqaln"] =
 /******/ 	function hotDownloadUpdateChunk(chunkId) {
 /******/ 		var script = document.createElement("script");
 /******/ 		script.charset = "utf-8";
-/******/ 		script.src = __webpack_require__.p + "d214699-" + chunkId + "-wps-hmr.js";
+/******/ 		script.src = __webpack_require__.p + "216e053-" + chunkId + "-wps-hmr.js";
 /******/ 		if (null) script.crossOrigin = null;
 /******/ 		document.head.appendChild(script);
 /******/ 	}
@@ -28,7 +28,7 @@ window["dash_seqaln"] =
 /******/ 			}
 /******/ 			try {
 /******/ 				var request = new XMLHttpRequest();
-/******/ 				var requestPath = __webpack_require__.p + "d214699-wps-hmr.json";
+/******/ 				var requestPath = __webpack_require__.p + "216e053-wps-hmr.json";
 /******/ 				request.open("GET", requestPath, true);
 /******/ 				request.timeout = requestTimeout;
 /******/ 				request.send(null);
@@ -64,7 +64,7 @@ window["dash_seqaln"] =
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "e99586881c452af05ecf";
+/******/ 	var hotCurrentHash = "d574ad2481fa7927f844";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -836,7 +836,7 @@ window["dash_seqaln"] =
 /******/ 	        var srcFragments = src.split('/');
 /******/ 	        var fileFragments = srcFragments.slice(-1)[0].split('.');
 /******/
-/******/ 	        fileFragments.splice(1, 0, "v0_0_1m1685554797");
+/******/ 	        fileFragments.splice(1, 0, "v0_0_1m1685649184");
 /******/ 	        srcFragments.splice(-1, 1, fileFragments.join('.'))
 /******/
 /******/ 	        return srcFragments.join('/');
@@ -933,7 +933,7 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, ".DashSeqaln table {\n  font-family: monospace;\n}\n\n.DashSeqaln table td.series-label,\n.DashSeqaln table td.aln-label {\n  padding-right: 30px;\n  font-weight: bold;\n  text-align: left;\n}\n\n.DashSeqaln table td {\n  vertical-align: bottom;\n  text-align: center;\n}\n\n.DashSeqAln table .aln-axis {\n  font-size: small;\n  margin-bottom: 2px;\n  margin-top: 3px;\n}\n\n.DashSeqAln table .aln-seqnum {\n  font-size: smaller;\n  padding-right: 5px;\n  vertical-align: middle;\n}\n\n.DashSeqAln table .series-scale {\n  font-size: smaller;\n}\n\n.DashSeqaln .Sortable {\n  margin-top: 20px;\n}\n\n.DashSeqaln .Sortable .SortableItem {\n  padding: 5px;\n  border: 1px solid gray;\n}\n\n.DashSeqaln .DashSeqaln-select {\n  display: flex;\n  flex-flow: row wrap;\n  justify-content: space-between;\n}\n\n.DashSeqaln .DashSeqaln-select .DashSeqaln-included,.DashSeqaln-excluded {\n  width: 45%;\n  min-width: 250px;\n}\n\n.DashSeqaln .DashSeqaln-select .DashSeqaln-included div, .DashSeqaln .DashSeqaln-select .DashSeqaln-excluded div {\n  padding: 5px;\n  border: 1px solid black;\n}\n", ""]);
+exports.push([module.i, ".DashSeqaln .title {\n}\n\n.DashSeqaln table {\n  font-family: monospace;\n  border-spacing: 0px;\n}\n\n.DashSeqaln .series {\n}\n\n.DashSeqaln .series-label {\n  padding-right: 30px;\n  font-weight: bold;\n  vertical-align: bottom;\n}\n\n.DashSeqaln .series-scale {\n  font-size: smaller;\n}\n\n.DashSeqaln .series-values {\n  vertical-align: bottom;\n}\n\n.DashSeqaln .series-values:hover .series-values-tooltip {\n  visibility: visible; /* don't change me */\n}\n\n.DashSeqaln .series-values-tooltip {\n  position: absolute; /* don't change me */\n  z-index: 1; /* don't change me */\n  visibility: hidden; /* don't change me */\n  left: 100%;\n  top: 100%;\n  background-color: lightgray;\n  padding: 2px;\n  border-radius: 5px;\n}\n\n.DashSeqaln .series-separator {\n  height: 20px;\n  padding: 0px;\n  border-top: dashed 2px lightgray;\n}\n\n.DashSeqaln .aln {\n}\n\n.DashSeqaln .aln-axis {\n  font-size: small;\n  margin-bottom: 2px;\n  margin-top: 3px;\n  text-align: center;\n}\n\n.DashSeqaln .aln-label {\n  padding-right: 30px;\n  font-weight: bold;\n}\n\n.DashSeqaln .aln-seqnum {\n  font-size: smaller;\n  padding-right: 5px;\n  vertical-align: middle;\n}\n\n.DashSeqaln .aln-letter {\n  cursor: default;\n  text-align: center;\n  position: relative; /* don't change me */\n}\n\n.DashSeqaln .aln-letter:hover .aln-letter-tooltip {\n  visibility: visible; /* don't change me */\n}\n\n.DashSeqaln .aln-letter-tooltip {\n  position: absolute; /* don't change me */\n  z-index: 1; /* don't change me */\n  visibility: hidden; /* don't change me */\n  bottom: 100%;\n  background-color: lightgray;\n  padding: 2px;\n  border-radius: 5px;\n}\n\n.DashSeqaln .seqselection {\n  display: flex;\n  flex-flow: row wrap;\n  justify-content: space-between;\n}\n\n.DashSeqaln .seqselection-included,.seqselection-excluded {\n  width: 45%;\n  min-width: 250px;\n}\n\n.DashSeqaln .seqselection-sortable {\n  margin-top: 20px;\n  padding: 5px;\n  border: 1px solid black;\n}\n\n.DashSeqaln .seqselection-sortable-item {\n  padding: 5px;\n  border: 1px solid gray;\n}\n\n.DashSeqaln .seqselection-excluded .seqselection-message {\n  font-size: small;\n  margin: 0px;\n}\n", ""]);
 // Exports
 module.exports = exports;
 
@@ -35238,7 +35238,7 @@ function invariant(condition, message) {
   let hash = '<unknown>';
   let options;
   try {
-    options = {"compress":null,"historyFallback":false,"hmr":true,"host":null,"liveReload":false,"log":{"level":"info","prefix":{"template":"{{level}}"},"name":"webpack-plugin-serve"},"open":true,"port":55555,"progress":true,"secure":false,"static":["/home/fmarotta/Projects/dash-seqaln"],"status":true,"address":"[::]:55555","compilerName":null,"wpsId":"d214699"};
+    options = {"compress":null,"historyFallback":false,"hmr":true,"host":null,"liveReload":false,"log":{"level":"info","prefix":{"template":"{{level}}"},"name":"webpack-plugin-serve"},"open":true,"port":55555,"progress":true,"secure":false,"static":["/home/fmarotta/Projects/dash-seqaln"],"status":true,"address":"[::]:55555","compilerName":null,"wpsId":"216e053"};
   } catch (e) {
     const { log } = __webpack_require__(/*! ./lib/client/log */ "./node_modules/webpack-plugin-serve/lib/client/log.js");
     log.error(
@@ -36352,7 +36352,14 @@ var sampleSeries = [{
   label: "Entropy",
   values: [0.1, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 0.3, 0.5, 0.2, 0.7, 0.9, 1],
   color: "green",
-  height: "100px"
+  height: "100px",
+  breaks: [0, .5, 1]
+}, {
+  label: "Conservation",
+  values: [0.1, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 0.3, 0.5, 0.2, 0.7, 0.9, 1],
+  color: "red",
+  height: "100px",
+  breaks: [0, .5, 1]
 }];
 var sampleAln = {
   "id1": "ART--RGPWTQRW-LLERERP---RM-M",
@@ -36493,6 +36500,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _DashSeqaln_react_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./DashSeqaln.react.css */ "./src/lib/components/DashSeqaln.react.css");
 /* harmony import */ var _DashSeqaln_react_css__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_DashSeqaln_react_css__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _msa_color_schemes_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../msa_color_schemes.js */ "./src/lib/msa_color_schemes.js");
+function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e2) { throw _e2; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e3) { didErr = true; err = _e3; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i]; return arr2; }
+function _iterableToArrayLimit(arr, i) { var _i = null == arr ? null : "undefined" != typeof Symbol && arr[Symbol.iterator] || arr["@@iterator"]; if (null != _i) { var _s, _e, _x, _r, _arr = [], _n = !0, _d = !1; try { if (_x = (_i = _i.call(arr)).next, 0 === i) { if (Object(_i) !== _i) return; _n = !1; } else for (; !(_n = (_s = _x.call(_i)).done) && (_arr.push(_s.value), _arr.length !== i); _n = !0); } catch (err) { _d = !0, _e = err; } finally { try { if (!_n && null != _i["return"] && (_r = _i["return"](), Object(_r) !== _r)) return; } finally { if (_d) throw _e; } } return _arr; } }
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
@@ -36520,9 +36534,7 @@ function DashSeqaln(props) {
     _props$show_seqnum = props.show_seqnum,
     show_seqnum = _props$show_seqnum === void 0 ? false : _props$show_seqnum,
     _props$zoom = props.zoom,
-    zoom = _props$zoom === void 0 ? "10px" : _props$zoom,
-    _props$border_spacing = props.border_spacing,
-    border_spacing = _props$border_spacing === void 0 ? "0px" : _props$border_spacing;
+    zoom = _props$zoom === void 0 ? 10 : _props$zoom;
   var setIncluded = function setIncluded(items) {
     setProps({
       included: items.map(function (x) {
@@ -36539,7 +36551,7 @@ function DashSeqaln(props) {
   };
   var sequence_selection_component = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null);
   if (allow_sequence_selection === true) {
-    sequence_selection_component = DashSeqalnSelect({
+    sequence_selection_component = Seqselection({
       id: id,
       included: included,
       excluded: excluded,
@@ -36547,7 +36559,12 @@ function DashSeqaln(props) {
       setExcluded: setExcluded
     });
   }
-  var alignment_colors = make_color_scheme(alignment, color_scheme);
+  var alignment_cumsum = Object(react__WEBPACK_IMPORTED_MODULE_0__["useMemo"])(function () {
+    return get_alignment_cumsum(alignment);
+  }, [alignment]);
+  var alignment_colors = Object(react__WEBPACK_IMPORTED_MODULE_0__["useMemo"])(function () {
+    return make_color_scheme(alignment, color_scheme);
+  }, [alignment, color_scheme]);
   var aln_breaks = [];
   for (var i = 0; i < alignment[Object.keys(alignment)[0]].length; i++) {
     if (i % 10 === 0) aln_breaks.push(String(i + 1));else aln_breaks.push("");
@@ -36555,13 +36572,12 @@ function DashSeqaln(props) {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     id: id,
     className: "DashSeqaln"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("table", {
-    style: {
-      "borderSpacing": border_spacing
-    }
-  }, series.map(function (seriesItem) {
+  }, title && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
+    className: "title"
+  }, title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("table", null, series.map(function (seriesItem) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("thead", {
-      key: "series-" + seriesItem.label
+      key: "series-" + seriesItem.label,
+      className: "series"
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
       className: "series-label"
     }, seriesItem.label), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
@@ -36570,35 +36586,39 @@ function DashSeqaln(props) {
         "position": "relative",
         "borderRight": "1px solid black"
       }
-    }, make_series_scale()), seriesItem.values.map(function (value, index) {
+    }, make_series_scale("breaks" in seriesItem ? seriesItem.breaks : undefined)), rescale_series(seriesItem.values, "breaks" in seriesItem ? seriesItem.breaks : undefined).map(function (value, index) {
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
         key: "series-" + index,
+        className: "series-values",
         style: {
-          "height": seriesItem.height
+          "height": seriesItem.height || "100px"
         }
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         style: {
-          "backgroundColor": seriesItem.color,
-          "height": 100 * value + "%"
+          "backgroundColor": seriesItem.color || "black",
+          "height": 100 * value + "%",
+          "position": "relative"
         }
-      }));
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "series-values-tooltip"
+      }, index + 1 + ":" + seriesItem.values[index])));
     })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
-      colSpan: "100%"
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", {
-      style: {
-        "margin": "0px",
-        "border": "dashed 1px lightGray"
-      }
-    }))));
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tbody", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
+      colSpan: "100%",
+      className: "series-separator"
+    })));
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tbody", {
+    className: "aln"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", {
+    className: "aln-axis"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
     className: "aln-axis-label"
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
     className: "aln-axis-seqnum"
   }), aln_breaks.map(function (x, index) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
-      key: "aln-resnum-" + index,
-      className: "aln-axis"
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      key: "aln-axis-resnum-" + index,
+      className: "aln-axis-resnum"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
       style: {
         "width": "0px"
       }
@@ -36613,20 +36633,40 @@ function DashSeqaln(props) {
     }, show_seqnum ? seqIndex : ""), alignment[seqId].split("").map(function (letter, index) {
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
         key: "aln-" + index,
+        className: "aln-letter",
         style: {
           "backgroundColor": alignment_colors[seqId][index],
-          "width": "10px"
+          "width": zoom + "px"
         }
-      }, show_letters ? letter : "");
+      }, show_letters ? letter : "", letter !== "-" && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "aln-letter-tooltip"
+      }, seqId + ":" + alignment_cumsum[seqId][index]));
     }));
   }))), sequence_selection_component);
 }
-function make_series_scale() {
+function rescale_series(values, breaks) {
+  var min = 0,
+    max = 1;
+  if (breaks) {
+    min = breaks[0];
+    max = breaks[breaks.length - 1];
+  }
+  return values.map(function (x) {
+    return (x - min) / (max - min);
+  });
+}
+function make_series_scale(breaks) {
+  var breaks_width = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : "8px";
   // for now we ignore the range and use a default scale for everything
-  var breaks = [0, 0.5, 1];
-  var breaks_width = "8px";
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, breaks.map(function (x) {
-    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  if (!breaks) {
+    breaks = [0, 0.5, 1];
+  }
+  var min = breaks[0];
+  var max = breaks[breaks.length - 1];
+  var breaks_rescaled = rescale_series(breaks, breaks);
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, breaks_rescaled.map(function (x, i) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      key: "break-" + i,
       style: {
         "position": "absolute",
         "bottom": "".concat(x * 100, "%"),
@@ -36634,14 +36674,17 @@ function make_series_scale() {
         "left": "calc(100% - ".concat(breaks_width, " + 1px)"),
         "borderBottom": "0.5px solid black"
       }
-    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    });
+  }), breaks_rescaled.map(function (x, i) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      key: "breaklabel-" + i,
       style: {
         "position": "absolute",
         "bottom": "".concat(x * 100, "%"),
-        "left": "calc(100% - ".concat(breaks_width, " + 1px)"),
-        "transform": "translate(-100%, 0)"
+        "left": "calc(100% - ".concat(breaks_width, ")"),
+        "transform": "translate(-100%, 0%)"
       }
-    }, x.toFixed(1)));
+    }, breaks[i].toFixed(1));
   }));
 }
 function make_color_scheme(alignment, scheme) {
@@ -36651,24 +36694,45 @@ function make_color_scheme(alignment, scheme) {
   seqIds.forEach(function (id) {
     return colors[id] = [];
   });
-  console.log(colors);
-  var _loop = function _loop() {
-    var column = [];
-    for (var _i = 0, _seqIds = seqIds; _i < _seqIds.length; _i++) {
-      var seqId = _seqIds[_i];
-      column.push(alignment[seqId][i]);
-    }
+  var _loop = function _loop(i) {
+    var column = seqIds.map(function (id) {
+      return alignment[id][i];
+    });
     var column_colors = Object(_msa_color_schemes_js__WEBPACK_IMPORTED_MODULE_4__["color_msa_column"])(column, scheme);
     seqIds.forEach(function (id, index) {
       return colors[id].push(column_colors[index]);
     });
   };
   for (var i = 0; i < aln_length; i++) {
-    _loop();
+    _loop(i);
   }
   return colors;
 }
-function DashSeqalnSelect(_ref) {
+function get_alignment_cumsum(alignment) {
+  var res = {};
+  for (var _i = 0, _Object$entries = Object.entries(alignment); _i < _Object$entries.length; _i++) {
+    var _Object$entries$_i = _slicedToArray(_Object$entries[_i], 2),
+      key = _Object$entries$_i[0],
+      val = _Object$entries$_i[1];
+    res[key] = [];
+    var cumsum = 0;
+    var _iterator = _createForOfIteratorHelper(val),
+      _step;
+    try {
+      for (_iterator.s(); !(_step = _iterator.n()).done;) {
+        var x = _step.value;
+        cumsum += x === "-" ? 0 : 1;
+        res[key].push(cumsum);
+      }
+    } catch (err) {
+      _iterator.e(err);
+    } finally {
+      _iterator.f();
+    }
+  }
+  return res;
+}
+function Seqselection(_ref) {
   var id = _ref.id,
     included = _ref.included,
     excluded = _ref.excluded,
@@ -36678,37 +36742,34 @@ function DashSeqalnSelect(_ref) {
   var includedItems = make_sortablejs_items(included);
   var excludedItems = make_sortablejs_items(excluded);
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "DashSeqaln-select"
+    className: "seqselection"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "DashSeqaln-included"
+    className: "seqselection-included"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Included sequences"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_sortablejs__WEBPACK_IMPORTED_MODULE_2__["ReactSortable"], {
-    group: "DashSeqaln-" + id,
+    group: "seqselection-" + id,
     list: includedItems,
     setList: setIncluded,
-    className: "Sortable"
+    className: "seqselection-sortable"
   }, includedItems.map(function (item) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
       key: item.id,
-      className: "SortableItem"
+      className: "seqselection-sortable-item"
     }, item.name);
   }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "DashSeqaln-excluded"
+    className: "seqselection-excluded"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Excluded sequences"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_sortablejs__WEBPACK_IMPORTED_MODULE_2__["ReactSortable"], {
-    group: "DashSeqaln-" + id,
+    group: "seqselection-" + id,
     list: excludedItems,
     setList: setExcluded,
-    className: "Sortable"
-  }, excludedItems.map(function (item) {
+    className: "seqselection-sortable"
+  }, excluded.length ? excludedItems.map(function (item) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
       key: item.id,
-      className: "SortableItem"
+      className: "seqselection-sortable-item"
     }, item.name);
-  }))));
-}
-function listdiff(l1, l2) {
-  return l1.filter(function (x) {
-    return !l2.includes(x);
-  });
+  }) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    className: "seqselection-message"
+  }, "Drag and drop a sequence ID here to remove it from the alignment."))));
 }
 function make_sortablejs_items(l) {
   return l.map(function (item) {

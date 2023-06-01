@@ -48,9 +48,9 @@ export default function DashSeqaln(props) {
               {seriesItem.label}
             </td>
             <td className="series-scale" style={{"position": "relative", "borderRight": "1px solid black"}}>
-              {make_series_scale(seriesItem?.breaks)}
+              {make_series_scale("breaks" in seriesItem ? seriesItem.breaks : undefined)}
             </td>
-            {rescale_series(seriesItem.values, seriesItem?.breaks).map((value, index) => (
+            {rescale_series(seriesItem.values, "breaks" in seriesItem ? seriesItem.breaks : undefined).map((value, index) => (
               <td key={"series-"+index} className="series-values" style={{"height": seriesItem.height || "100px"}}>
                 <div style={{"backgroundColor": seriesItem.color || "black", "height": (100 * value) + "%", "position": "relative"}}>
                   <span className="series-values-tooltip">{(index + 1) + ":" + seriesItem.values[index]}</span>
