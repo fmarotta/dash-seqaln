@@ -48,9 +48,9 @@ export default function DashSeqaln(props) {
               {seriesItem.label}
             </td>
             <td className="series-scale" style={{"position": "relative", "borderRight": "1px solid black"}}>
-              {make_series_scale()}
+              {make_series_scale(seriesItem?.breaks)}
             </td>
-            {seriesItem.values.map((value, index) => (
+            {rescale_series(seriesItem.values, seriesItem?.breaks).map((value, index) => (
               <td key={"series-"+index} className="series-values" style={{"height": seriesItem.height || "100px"}}>
                 <div style={{"backgroundColor": seriesItem.color || "black", "height": (100 * value) + "%"}}></div>
               </td>
@@ -94,17 +94,30 @@ export default function DashSeqaln(props) {
   );
 }
 
-function make_series_scale() {
+function rescale_series(values, breaks) {
+  let min = 0, max = 1;
+  if (breaks) {
+    min = breaks[0];
+    max = breaks[breaks.length - 1];
+  }
+  return values.map((x) => (x - min) / (max - min));
+}
+
+function make_series_scale(breaks, breaks_width = "8px") {
   // for now we ignore the range and use a default scale for everything
-  const breaks = [0, 0.5, 1];
-  const breaks_width = "8px";
+  if (!breaks) {
+    breaks = [0, 0.5, 1];
+  }
+  let min = breaks[0];
+  let max = breaks[breaks.length - 1];
+  let breaks_rescaled = rescale_series(breaks, breaks);
   return (
     <>
-    {breaks.map((x, i) => (
+    {breaks_rescaled.map((x, i) => (
       <div key={"break-"+i} style={{"position": "absolute", "bottom": `${x * 100}%`, "width": breaks_width, "left": `calc(100% - ${breaks_width} + 1px)`, "borderBottom": "0.5px solid black"}}></div>
     ))}
-    {breaks.map((x, i) => (
-      <div  key={"breaklabel-"+i}style={{"position": "absolute", "bottom": `${x * 100}%`, "left": `calc(100% - ${breaks_width} + 1px)`, "transform": "translate(-100%, 0)"}}>{x.toFixed(1)}</div>
+    {breaks_rescaled.map((x, i) => (
+      <div  key={"breaklabel-"+i}style={{"position": "absolute", "bottom": `${x * 100}%`, "left": `calc(100% - ${breaks_width})`, "transform": "translate(-100%, 0%)"}}>{breaks[i].toFixed(1)}</div>
     ))}
     </>
   );

@@ -24,9 +24,9 @@
 }
 
 .DashSeqaln .series-separator {
-  height: 0px;
+  height: 20px;
   padding: 0px;
-  border: dashed 1px lightgray;
+  border-top: dashed 2px lightgray;
 }
 
 .DashSeqaln .aln {
