@@ -52,7 +52,9 @@ export default function DashSeqaln(props) {
             </td>
             {rescale_series(seriesItem.values, seriesItem?.breaks).map((value, index) => (
               <td key={"series-"+index} className="series-values" style={{"height": seriesItem.height || "100px"}}>
-                <div style={{"backgroundColor": seriesItem.color || "black", "height": (100 * value) + "%"}}></div>
+                <div style={{"backgroundColor": seriesItem.color || "black", "height": (100 * value) + "%", "position": "relative"}}>
+                  <span className="series-values-tooltip">{(index + 1) + ":" + seriesItem.values[index]}</span>
+                </div>
               </td>
             ))}
           </tr>
