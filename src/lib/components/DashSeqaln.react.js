@@ -40,6 +40,7 @@ export default function DashSeqaln(props) {
   return (
     <div id={id} className="DashSeqaln">
       {title && (<h2 className="title">{title}</h2>)}
+      <div style={{"overflow-x": "auto"}}>
       <table>
         {series.map((seriesItem) => (
           <thead key={"series-"+seriesItem.label} className="series">
@@ -67,7 +68,7 @@ export default function DashSeqaln(props) {
           <td className="aln-axis-seqnum"></td>
           {aln_breaks.map((x, index) => (
             <td key={"aln-axis-resnum-"+index} className="aln-axis-resnum">
-              <span style={{"width": "0px"}}>{x}</span>
+              <span style={{"width": "0px", "display": "block"}}>{x}</span>
             </td>
           ))}
         </tr>
@@ -91,6 +92,7 @@ export default function DashSeqaln(props) {
         ))}
       </tbody>
       </table>
+      </div>
       {sequence_selection_component}
     </div>
   );

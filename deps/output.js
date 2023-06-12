@@ -14,7 +14,7 @@ window["dash_seqaln"] =
 /******/ 	function hotDownloadUpdateChunk(chunkId) {
 /******/ 		var script = document.createElement("script");
 /******/ 		script.charset = "utf-8";
-/******/ 		script.src = __webpack_require__.p + "216e053-" + chunkId + "-wps-hmr.js";
+/******/ 		script.src = __webpack_require__.p + "0dcdfb0-" + chunkId + "-wps-hmr.js";
 /******/ 		if (null) script.crossOrigin = null;
 /******/ 		document.head.appendChild(script);
 /******/ 	}
@@ -28,7 +28,7 @@ window["dash_seqaln"] =
 /******/ 			}
 /******/ 			try {
 /******/ 				var request = new XMLHttpRequest();
-/******/ 				var requestPath = __webpack_require__.p + "216e053-wps-hmr.json";
+/******/ 				var requestPath = __webpack_require__.p + "0dcdfb0-wps-hmr.json";
 /******/ 				request.open("GET", requestPath, true);
 /******/ 				request.timeout = requestTimeout;
 /******/ 				request.send(null);
@@ -64,7 +64,7 @@ window["dash_seqaln"] =
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "d574ad2481fa7927f844";
+/******/ 	var hotCurrentHash = "fa47c26301b40156092d";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -836,7 +836,7 @@ window["dash_seqaln"] =
 /******/ 	        var srcFragments = src.split('/');
 /******/ 	        var fileFragments = srcFragments.slice(-1)[0].split('.');
 /******/
-/******/ 	        fileFragments.splice(1, 0, "v0_0_1m1685649184");
+/******/ 	        fileFragments.splice(1, 0, "v0_0_2m1686583143");
 /******/ 	        srcFragments.splice(-1, 1, fileFragments.join('.'))
 /******/
 /******/ 	        return srcFragments.join('/');
@@ -35238,7 +35238,7 @@ function invariant(condition, message) {
   let hash = '<unknown>';
   let options;
   try {
-    options = {"compress":null,"historyFallback":false,"hmr":true,"host":null,"liveReload":false,"log":{"level":"info","prefix":{"template":"{{level}}"},"name":"webpack-plugin-serve"},"open":true,"port":55555,"progress":true,"secure":false,"static":["/home/fmarotta/Projects/dash-seqaln"],"status":true,"address":"[::]:55555","compilerName":null,"wpsId":"216e053"};
+    options = {"compress":null,"historyFallback":false,"hmr":true,"host":null,"liveReload":false,"log":{"level":"info","prefix":{"template":"{{level}}"},"name":"webpack-plugin-serve"},"open":true,"port":55555,"progress":true,"secure":false,"static":["/home/fmarotta/Projects/dash-seqaln"],"status":true,"address":"[::]:55555","compilerName":null,"wpsId":"0dcdfb0"};
   } catch (e) {
     const { log } = __webpack_require__(/*! ./lib/client/log */ "./node_modules/webpack-plugin-serve/lib/client/log.js");
     log.error(
@@ -36574,7 +36574,11 @@ function DashSeqaln(props) {
     className: "DashSeqaln"
   }, title && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
     className: "title"
-  }, title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("table", null, series.map(function (seriesItem) {
+  }, title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    style: {
+      "overflow-x": "auto"
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("table", null, series.map(function (seriesItem) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("thead", {
       key: "series-" + seriesItem.label,
       className: "series"
@@ -36620,7 +36624,8 @@ function DashSeqaln(props) {
       className: "aln-axis-resnum"
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
       style: {
-        "width": "0px"
+        "width": "0px",
+        "overflow": "hidden"
       }
     }, x));
   })), included.map(function (seqId, seqIndex) {
@@ -36642,7 +36647,7 @@ function DashSeqaln(props) {
         className: "aln-letter-tooltip"
       }, seqId + ":" + alignment_cumsum[seqId][index]));
     }));
-  }))), sequence_selection_component);
+  })))), sequence_selection_component);
 }
 function rescale_series(values, breaks) {
   var min = 0,
