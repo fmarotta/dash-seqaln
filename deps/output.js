@@ -14,7 +14,7 @@ window["dash_seqaln"] =
 /******/ 	function hotDownloadUpdateChunk(chunkId) {
 /******/ 		var script = document.createElement("script");
 /******/ 		script.charset = "utf-8";
-/******/ 		script.src = __webpack_require__.p + "0dcdfb0-" + chunkId + "-wps-hmr.js";
+/******/ 		script.src = __webpack_require__.p + "a7266b1-" + chunkId + "-wps-hmr.js";
 /******/ 		if (null) script.crossOrigin = null;
 /******/ 		document.head.appendChild(script);
 /******/ 	}
@@ -28,7 +28,7 @@ window["dash_seqaln"] =
 /******/ 			}
 /******/ 			try {
 /******/ 				var request = new XMLHttpRequest();
-/******/ 				var requestPath = __webpack_require__.p + "0dcdfb0-wps-hmr.json";
+/******/ 				var requestPath = __webpack_require__.p + "a7266b1-wps-hmr.json";
 /******/ 				request.open("GET", requestPath, true);
 /******/ 				request.timeout = requestTimeout;
 /******/ 				request.send(null);
@@ -64,7 +64,7 @@ window["dash_seqaln"] =
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "fa47c26301b40156092d";
+/******/ 	var hotCurrentHash = "a3a2b3283b6d7ed74de9";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -836,7 +836,7 @@ window["dash_seqaln"] =
 /******/ 	        var srcFragments = src.split('/');
 /******/ 	        var fileFragments = srcFragments.slice(-1)[0].split('.');
 /******/
-/******/ 	        fileFragments.splice(1, 0, "v0_0_2m1686583143");
+/******/ 	        fileFragments.splice(1, 0, "v0_1_0m1687971844");
 /******/ 	        srcFragments.splice(-1, 1, fileFragments.join('.'))
 /******/
 /******/ 	        return srcFragments.join('/');
@@ -933,7 +933,7 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, ".DashSeqaln .title {\n}\n\n.DashSeqaln table {\n  font-family: monospace;\n  border-spacing: 0px;\n}\n\n.DashSeqaln .series {\n}\n\n.DashSeqaln .series-label {\n  padding-right: 30px;\n  font-weight: bold;\n  vertical-align: bottom;\n}\n\n.DashSeqaln .series-scale {\n  font-size: smaller;\n}\n\n.DashSeqaln .series-values {\n  vertical-align: bottom;\n}\n\n.DashSeqaln .series-values:hover .series-values-tooltip {\n  visibility: visible; /* don't change me */\n}\n\n.DashSeqaln .series-values-tooltip {\n  position: absolute; /* don't change me */\n  z-index: 1; /* don't change me */\n  visibility: hidden; /* don't change me */\n  left: 100%;\n  top: 100%;\n  background-color: lightgray;\n  padding: 2px;\n  border-radius: 5px;\n}\n\n.DashSeqaln .series-separator {\n  height: 20px;\n  padding: 0px;\n  border-top: dashed 2px lightgray;\n}\n\n.DashSeqaln .aln {\n}\n\n.DashSeqaln .aln-axis {\n  font-size: small;\n  margin-bottom: 2px;\n  margin-top: 3px;\n  text-align: center;\n}\n\n.DashSeqaln .aln-label {\n  padding-right: 30px;\n  font-weight: bold;\n}\n\n.DashSeqaln .aln-seqnum {\n  font-size: smaller;\n  padding-right: 5px;\n  vertical-align: middle;\n}\n\n.DashSeqaln .aln-letter {\n  cursor: default;\n  text-align: center;\n  position: relative; /* don't change me */\n}\n\n.DashSeqaln .aln-letter:hover .aln-letter-tooltip {\n  visibility: visible; /* don't change me */\n}\n\n.DashSeqaln .aln-letter-tooltip {\n  position: absolute; /* don't change me */\n  z-index: 1; /* don't change me */\n  visibility: hidden; /* don't change me */\n  bottom: 100%;\n  background-color: lightgray;\n  padding: 2px;\n  border-radius: 5px;\n}\n\n.DashSeqaln .seqselection {\n  display: flex;\n  flex-flow: row wrap;\n  justify-content: space-between;\n}\n\n.DashSeqaln .seqselection-included,.seqselection-excluded {\n  width: 45%;\n  min-width: 250px;\n}\n\n.DashSeqaln .seqselection-sortable {\n  margin-top: 20px;\n  padding: 5px;\n  border: 1px solid black;\n}\n\n.DashSeqaln .seqselection-sortable-item {\n  padding: 5px;\n  border: 1px solid gray;\n}\n\n.DashSeqaln .seqselection-excluded .seqselection-message {\n  font-size: small;\n  margin: 0px;\n}\n", ""]);
+exports.push([module.i, ".DashSeqaln .title {\n}\n\n.DashSeqaln table {\n  font-family: monospace;\n  border-spacing: 0px;\n  border-collapse: collapse;\n}\n\n.DashSeqaln .series {\n}\n\n.DashSeqaln .series-label {\n  padding-right: 30px;\n  font-weight: bold;\n  vertical-align: bottom;\n}\n\n.DashSeqaln .series-scale {\n  font-size: smaller;\n}\n\n.DashSeqaln .series-values {\n  vertical-align: bottom;\n}\n\n.DashSeqaln .series-values:hover .series-values-tooltip {\n  visibility: visible; /* don't change me */\n}\n\n.DashSeqaln .series-values-tooltip {\n  position: absolute; /* don't change me */\n  z-index: 1; /* don't change me */\n  visibility: hidden; /* don't change me */\n  left: 100%;\n  top: 100%;\n  background-color: lightgray;\n  padding: 2px;\n  border-radius: 5px;\n}\n\n.DashSeqaln .series-separator {\n  height: 20px;\n  padding: 0px;\n  border-top: solid 2px lightgray;\n  border-collapse: revert;\n  font-family: revert;\n  font-weight: revert;\n}\n\n.DashSeqaln .aln-row.highlighted {\n  border-bottom: 2px solid red;\n  border-top: 2px solid red;\n}\n\n.DashSeqaln .aln-axis {\n  font-size: small;\n  margin-bottom: 2px;\n  margin-top: 3px;\n  text-align: center;\n}\n\n.DashSeqaln .aln-label {\n  padding-right: 5px;\n  font-weight: bold;\n  text-align: right;\n}\n\n.DashSeqaln .series-label,\n.DashSeqaln .series-scale,\n.DashSeqaln .aln-axis-label,\n.DashSeqaln .aln-axis-seqnum,\n.DashSeqaln .aln-label,\n.DashSeqaln .aln-seqnum {\n  position: sticky;\n  left: 0px;\n  background-color: white;\n  z-index: 1;\n}\n\n.DashSeqaln .aln-seqnum {\n  font-size: smaller;\n  padding-right: 5px;\n  vertical-align: middle;\n}\n\n.DashSeqaln .aln-letter {\n  cursor: default;\n  text-align: center;\n  position: relative; /* don't change me */\n}\n\n.DashSeqaln .aln-letter.highlighted {\n  border-left: 2px solid red;\n  border-right: 2px solid red;\n}\n\n.DashSeqaln .aln-letter:hover .aln-letter-tooltip {\n  visibility: visible; /* don't change me */\n}\n\n.DashSeqaln .aln-letter-tooltip {\n  position: absolute; /* don't change me */\n  z-index: 1; /* don't change me */\n  visibility: hidden; /* don't change me */\n  bottom: 100%;\n  background-color: lightgray;\n  padding: 2px;\n  border-radius: 5px;\n}\n\n.DashSeqaln .seqselection {\n  display: flex;\n  flex-flow: row wrap;\n  justify-content: space-between;\n}\n\n.DashSeqaln .seqselection-included,.seqselection-excluded {\n  width: 45%;\n  min-width: 250px;\n}\n\n.DashSeqaln .seqselection-sortable {\n  margin-top: 20px;\n  padding: 5px;\n  border: 1px solid black;\n}\n\n.DashSeqaln .seqselection-sortable-item {\n  padding: 5px;\n  border: 1px solid gray;\n}\n\n.DashSeqaln .seqselection-excluded .seqselection-message {\n  font-size: small;\n  margin: 0px;\n}\n", ""]);
 // Exports
 module.exports = exports;
 
@@ -35238,7 +35238,7 @@ function invariant(condition, message) {
   let hash = '<unknown>';
   let options;
   try {
-    options = {"compress":null,"historyFallback":false,"hmr":true,"host":null,"liveReload":false,"log":{"level":"info","prefix":{"template":"{{level}}"},"name":"webpack-plugin-serve"},"open":true,"port":55555,"progress":true,"secure":false,"static":["/home/fmarotta/Projects/dash-seqaln"],"status":true,"address":"[::]:55555","compilerName":null,"wpsId":"0dcdfb0"};
+    options = {"compress":null,"historyFallback":false,"hmr":true,"host":null,"liveReload":false,"log":{"level":"info","prefix":{"template":"{{level}}"},"name":"webpack-plugin-serve"},"open":true,"port":55555,"progress":true,"secure":false,"static":["/home/fmarotta/Projects/dash-seqaln"],"status":true,"address":"[::]:55555","compilerName":null,"wpsId":"a7266b1"};
   } catch (e) {
     const { log } = __webpack_require__(/*! ./lib/client/log */ "./node_modules/webpack-plugin-serve/lib/client/log.js");
     log.error(
@@ -36350,21 +36350,56 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 
 var sampleSeries = [{
   label: "Entropy",
-  values: [0.1, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 0.3, 0.5, 0.2, 0.7, 0.9, 1],
+  values: [0.1, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 0.3, 0.5, 0.2, 0.7, 0.9, 1, 0.1, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 0.3, 0.5, 0.2, 0.7, 0.9, 1, 0.1, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 0.3, 0.5, 0.2, 0.7, 0.9, 1, 0.1, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 0.3, 0.5, 0.2, 0.7, 0.9, 1, 0.1, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 0.3, 0.5, 0.2, 0.7, 0.9, 1, 0.1, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 0.3, 0.5, 0.2, 0.7, 0.9, 1, 0.1, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 0.3, 0.5, 0.2, 0.7, 0.9, 1, 0.1, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 0.3, 0.5, 0.2, 0.7, 0.9, 1, 0.1, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 0.3, 0.5, 0.2, 0.7, 0.9, 1, 0.1, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 0.3, 0.5, 0.2, 0.7, 0.9, 1, 0.1, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 0.3, 0.5, 0.2, 0.7, 0.9, 1, 0.1, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 0.3, 0.5, 0.2, 0.1, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
   color: "green",
   height: "100px",
   breaks: [0, .5, 1]
 }, {
-  label: "Conservation",
-  values: [0.1, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 0.3, 0.5, 0.2, 0.7, 0.9, 1],
+  label: "Conservationevolissimevolmente",
+  values: [0.1, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 0.3, 0.5, 0.2, 0.7, 0.9, 1, 0.1, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 0.3, 0.5, 0.2, 0.7, 0.9, 1, 0.1, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 0.3, 0.5, 0.2, 0.7, 0.9, 1, 0.1, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 0.3, 0.5, 0.2, 0.7, 0.9, 1, 0.1, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 0.3, 0.5, 0.2, 0.7, 0.9, 1, 0.1, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 0.3, 0.5, 0.2, 0.7, 0.9, 1, 0.1, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 0.3, 0.5, 0.2, 0.7, 0.9, 1, 0.1, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 0.3, 0.5, 0.2, 0.7, 0.9, 1, 0.1, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 0.3, 0.5, 0.2, 0.7, 0.9, 1, 0.1, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 0.3, 0.5, 0.2, 0.7, 0.9, 1, 0.1, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 0.3, 0.5, 0.2, 0.7, 0.9, 1, 0.1, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 0.3, 0.5, 0.2, 0.1, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 0.3, 0.5, 0.2, 0, 0.5, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
   color: "red",
   height: "100px",
   breaks: [0, .5, 1]
 }];
 var sampleAln = {
-  "id1": "ART--RGPWTQRW-LLERERP---RM-M",
-  "id2": "A-MD-RGD-TDRWPLLD-EWP---RTFM",
-  "id3": "AR--TRGP-TERWP--ERERP---RM-M"
+  "id1": "ART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGP",
+  "id2": "A-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD",
+  "id3": "AR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP",
+  "id4": "ART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGP"
+  /*
+  "id5": "A-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD",
+  "id6": "AR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP",
+  "id7": "ART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGP",
+  "id8": "A-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD",
+  "id9": "AR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP",
+  "id10": "ART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RG",
+  "id20": "A-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RG",
+  "id30": "AR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRG",
+  "id11": "ART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RG",
+  "id21": "A-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RG",
+  "id31": "AR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRG",
+  "id12": "ART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RG",
+  "id22": "A-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RG",
+  "id32": "AR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRG",
+  "id13": "ART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RG",
+  "id23": "A-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RG",
+  "id33": "AR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRG",
+  "id14": "ART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RG",
+  "id24": "A-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RG",
+  "id34": "AR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRG",
+  "id15": "ART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RG",
+  "id25": "A-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RG",
+  "id35": "AR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRG",
+  "id16": "ART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RG",
+  "id26": "A-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RG",
+  "id36": "AR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRG",
+  "id17": "ART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RG",
+  "id27": "A-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RG",
+  "id37": "AR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRG",
+  "id18": "ART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RG",
+  "id28": "A-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RG",
+  "id38": "AR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRG",
+  */
 };
 var App = /*#__PURE__*/function (_Component) {
   _inherits(App, _Component);
@@ -36379,6 +36414,7 @@ var App = /*#__PURE__*/function (_Component) {
       included: Object.keys(sampleAln),
       excluded: [],
       series: sampleSeries,
+      zoom: 10,
       color_scheme: "Flower",
       show_letters: true,
       allow_sequence_selection: true
@@ -36497,9 +36533,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var react_sortablejs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-sortablejs */ "./node_modules/react-sortablejs/dist/index.js");
 /* harmony import */ var react_sortablejs__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_sortablejs__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _DashSeqaln_react_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./DashSeqaln.react.css */ "./src/lib/components/DashSeqaln.react.css");
-/* harmony import */ var _DashSeqaln_react_css__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_DashSeqaln_react_css__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _msa_color_schemes_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../msa_color_schemes.js */ "./src/lib/msa_color_schemes.js");
+/* harmony import */ var _msa_color_schemes_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../msa_color_schemes.js */ "./src/lib/msa_color_schemes.js");
+/* harmony import */ var _DashSeqaln_react_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./DashSeqaln.react.css */ "./src/lib/components/DashSeqaln.react.css");
+/* harmony import */ var _DashSeqaln_react_css__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_DashSeqaln_react_css__WEBPACK_IMPORTED_MODULE_4__);
 function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e2) { throw _e2; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e3) { didErr = true; err = _e3; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -36522,9 +36558,9 @@ function DashSeqaln(props) {
   var id = props.id,
     title = props.title,
     alignment = props.alignment,
+    series = props.series,
     included = props.included,
     excluded = props.excluded,
-    series = props.series,
     color_scheme = props.color_scheme,
     setProps = props.setProps;
   var _props$allow_sequence = props.allow_sequence_selection,
@@ -36535,6 +36571,54 @@ function DashSeqaln(props) {
     show_seqnum = _props$show_seqnum === void 0 ? false : _props$show_seqnum,
     _props$zoom = props.zoom,
     zoom = _props$zoom === void 0 ? 10 : _props$zoom;
+  var alnLength = alignment ? alignment[Object.keys(alignment)[0]].length : 0;
+  var labelRef = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])();
+  var scaleRef = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])();
+  var scrollViewportRef = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])();
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(0),
+    _useState2 = _slicedToArray(_useState, 2),
+    labelWidth = _useState2[0],
+    setLabelWidth = _useState2[1];
+  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(0),
+    _useState4 = _slicedToArray(_useState3, 2),
+    scaleWidth = _useState4[0],
+    setScaleWidth = _useState4[1];
+  var _useState5 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(0),
+    _useState6 = _slicedToArray(_useState5, 2),
+    scrollViewportWidth = _useState6[0],
+    setScrollViewportWidth = _useState6[1];
+  var _useState7 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(),
+    _useState8 = _slicedToArray(_useState7, 2),
+    highlightedRow = _useState8[0],
+    setHighlightedRow = _useState8[1];
+  var _useState9 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(),
+    _useState10 = _slicedToArray(_useState9, 2),
+    highlightedCol = _useState10[0],
+    setHighlightedCol = _useState10[1];
+  var _useState11 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])([0, alnLength]),
+    _useState12 = _slicedToArray(_useState11, 2),
+    renderBounds = _useState12[0],
+    setRenderBounds = _useState12[1];
+  var _useState13 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
+    _useState14 = _slicedToArray(_useState13, 2),
+    ticking = _useState14[0],
+    setTicking = _useState14[1];
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useLayoutEffect"])(function () {
+    var lw = labelRef.current.getBoundingClientRect().width;
+    var sw = scaleRef.current.getBoundingClientRect().width;
+    var svw = scrollViewportRef.current.getBoundingClientRect().width;
+    setLabelWidth(lw);
+    setScaleWidth(sw);
+    setScrollViewportWidth(svw);
+    setRenderBounds(getRenderBounds({
+      scrollLeft: 0,
+      scrollWidth: svw,
+      stickyWidth: lw + sw,
+      alnLength: alnLength,
+      zoom: zoom
+    }));
+  }, []);
+  // console.log(scrollViewPort.scrollLeft);
   var setIncluded = function setIncluded(items) {
     setProps({
       included: items.map(function (x) {
@@ -36549,105 +36633,207 @@ function DashSeqaln(props) {
       })
     });
   };
-  var sequence_selection_component = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null);
-  if (allow_sequence_selection === true) {
-    sequence_selection_component = Seqselection({
-      id: id,
-      included: included,
-      excluded: excluded,
-      setIncluded: setIncluded,
-      setExcluded: setExcluded
+  var setHighlighted = function setHighlighted(row, col) {
+    setHighlightedRow(row);
+    setHighlightedCol(col);
+    // setProps({highlightedRow: row, highlightedCol: col});
+  };
+
+  var handleScroll = function handleScroll() {
+    // if (!ticking) {
+    console.log(renderBounds);
+    window.requestAnimationFrame(function () {
+      console.log(scrollViewportRef);
+      setRenderBounds(getRenderBounds({
+        scrollLeft: scrollViewportRef.current.scrollLeft,
+        scrollWidth: scrollViewportWidth,
+        stickyWidth: labelWidth + scaleWidth,
+        alnLength: alnLength,
+        zoom: zoom
+      }));
+      // setTicking(false);
     });
-  }
+    // setTicking(true);
+    // };
+  };
+
   var alignment_cumsum = Object(react__WEBPACK_IMPORTED_MODULE_0__["useMemo"])(function () {
     return get_alignment_cumsum(alignment);
   }, [alignment]);
   var alignment_colors = Object(react__WEBPACK_IMPORTED_MODULE_0__["useMemo"])(function () {
     return make_color_scheme(alignment, color_scheme);
   }, [alignment, color_scheme]);
-  var aln_breaks = [];
-  for (var i = 0; i < alignment[Object.keys(alignment)[0]].length; i++) {
-    if (i % 10 === 0) aln_breaks.push(String(i + 1));else aln_breaks.push("");
-  }
+  var aln_breaks = Object(react__WEBPACK_IMPORTED_MODULE_0__["useMemo"])(function () {
+    return get_alignment_breaks(alnLength, 10);
+  }, [alignment]);
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     id: id,
     className: "DashSeqaln"
   }, title && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
     className: "title"
   }, title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    ref: scrollViewportRef,
     style: {
-      "overflow-x": "auto"
+      "overflowX": "auto"
+    },
+    onScroll: function onScroll() {
+      return handleScroll();
     }
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("table", null, series.map(function (seriesItem) {
-    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("thead", {
-      key: "series-" + seriesItem.label,
-      className: "series"
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
-      className: "series-label"
-    }, seriesItem.label), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
-      className: "series-scale",
-      style: {
-        "position": "relative",
-        "borderRight": "1px solid black"
-      }
-    }, make_series_scale("breaks" in seriesItem ? seriesItem.breaks : undefined)), rescale_series(seriesItem.values, "breaks" in seriesItem ? seriesItem.breaks : undefined).map(function (value, index) {
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
-        key: "series-" + index,
-        className: "series-values",
-        style: {
-          "height": seriesItem.height || "100px"
-        }
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        style: {
-          "backgroundColor": seriesItem.color || "black",
-          "height": 100 * value + "%",
-          "position": "relative"
-        }
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-        className: "series-values-tooltip"
-      }, index + 1 + ":" + seriesItem.values[index])));
-    })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
-      colSpan: "100%",
-      className: "series-separator"
-    })));
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("table", null, series && series.map(function (seriesItem) {
+    return VirtualHead(seriesItem.label, seriesItem.breaks, seriesItem.height, rescale_series(seriesItem.values, seriesItem.breaks), seriesItem.color, labelWidth, renderBounds);
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tbody", {
     className: "aln"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", {
-    className: "aln-axis"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
-    className: "aln-axis-label"
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
-    className: "aln-axis-seqnum"
-  }), aln_breaks.map(function (x, index) {
-    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
-      key: "aln-axis-resnum-" + index,
+  }, VirtualBreaks(labelRef, scaleRef, aln_breaks, zoom, labelWidth, renderBounds), included && included.map(function (seqId, seqIndex) {
+    return VirtualAlignment(seqId, seqIndex, alignment[seqId].split(""), alignment_colors[seqId], alignment_cumsum[seqId], highlightedRow, highlightedCol, show_seqnum, show_letters, zoom, labelWidth, renderBounds);
+  })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Seqselection, {
+    id: id,
+    included: included,
+    excluded: excluded,
+    setIncluded: setIncluded,
+    setExcluded: setExcluded,
+    enabled: allow_sequence_selection
+  }));
+}
+function VirtualHead(label, breaks, height, values, color, labelWidth, renderBounds) {
+  var colSpanPre = renderBounds[0];
+  var colSpanPost = values.length - renderBounds[1];
+  var childrenCols = new Array(renderBounds[1] - renderBounds[0]);
+  for (var i = renderBounds[0]; i < renderBounds[1]; ++i) {
+    childrenCols[i - renderBounds[0]] = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
+      key: "series-" + i,
+      className: "series-values",
+      style: {
+        "height": height || "100px"
+      }
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      style: {
+        "backgroundColor": color || "black",
+        "height": 100 * values[i] + "%",
+        "position": "relative"
+      }
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+      className: "series-values-tooltip"
+    }, i + 1 + ":" + values[i])));
+  }
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("thead", {
+    key: "series-" + label,
+    className: "series"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
+    className: "series-label"
+  }, label), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
+    className: "series-scale",
+    style: {
+      "position": "sticky",
+      "left": labelWidth
+    }
+  }, make_series_scale(breaks)), colSpanPre > 0 && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
+    colSpan: colSpanPre
+  }), childrenCols, colSpanPost > 0 && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
+    colSpan: colSpanPost
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
+    colSpan: values.length,
+    className: "series-separator"
+  })));
+}
+function VirtualBreaks(labelRef, scaleRef, values, zoom, labelWidth, renderBounds) {
+  var colSpanPre = renderBounds[0];
+  var colSpanPost = values.length - renderBounds[1];
+  // Each td has a padding of one, so we need `zoom + 2`
+  var widthPre = (zoom + 2) * colSpanPre - 2; // We subtract 2 because two pixels will be added by the padding
+  var widthPost = (zoom + 2) * colSpanPost - 2;
+  var childrenCols = new Array(renderBounds[1] - renderBounds[0]);
+  for (var i = renderBounds[0]; i < renderBounds[1]; ++i) {
+    childrenCols[i - renderBounds[0]] = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
+      key: "aln-axis-resnum-" + i,
       className: "aln-axis-resnum"
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
       style: {
         "width": "0px",
-        "overflow": "hidden"
+        "display": "block"
       }
-    }, x));
-  })), included.map(function (seqId, seqIndex) {
-    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", {
-      key: "aln-" + seqId
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
-      className: "aln-label"
-    }, seqId), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
-      className: "aln-seqnum"
-    }, show_seqnum ? seqIndex : ""), alignment[seqId].split("").map(function (letter, index) {
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
-        key: "aln-" + index,
-        className: "aln-letter",
-        style: {
-          "backgroundColor": alignment_colors[seqId][index],
-          "width": zoom + "px"
-        }
-      }, show_letters ? letter : "", letter !== "-" && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-        className: "aln-letter-tooltip"
-      }, seqId + ":" + alignment_cumsum[seqId][index]));
-    }));
-  })))), sequence_selection_component);
+    }, values[i]));
+  }
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", {
+    className: "aln-axis"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
+    ref: labelRef,
+    className: "aln-axis-label"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
+    ref: scaleRef,
+    className: "aln-axis-seqnum",
+    style: {
+      "position": "sticky",
+      "left": labelWidth
+    }
+  }), colSpanPre > 0 && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
+    colSpan: colSpanPre,
+    style: {
+      "minWidth": widthPre + "px",
+      "maxWidth": widthPre + "px"
+    }
+  }), childrenCols, colSpanPost > 0 && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
+    colSpan: colSpanPost,
+    style: {
+      "minWidth": widthPost + "px",
+      "maxWidth": widthPost + "px"
+    }
+  }));
+}
+function VirtualAlignment(label, rowNumber, values, colors, cumsum, highlightedRow, highlightedCol, show_seqnum, show_letters, zoom, labelWidth, renderBounds) {
+  var colSpanPre = renderBounds[0];
+  var colSpanPost = values.length - renderBounds[1];
+  var childrenCols = new Array(renderBounds[1] - renderBounds[0]);
+  var _loop = function _loop(i) {
+    childrenCols[i - renderBounds[0]] = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
+      key: "aln-" + i,
+      className: "aln-letter" + (i === highlightedCol ? " highlighted" : ""),
+      style: {
+        "backgroundColor": colors[i],
+        "minWidth": zoom + "px",
+        "maxWidth": zoom + "px"
+      },
+      onClick: function onClick() {
+        setHighlighted(rowNumber, i);
+      }
+    }, show_letters ? values[i] : "", values[i] !== "-" && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+      className: "aln-letter-tooltip"
+    }, label + ":" + cumsum[i]));
+  };
+  for (var i = renderBounds[0]; i < renderBounds[1]; ++i) {
+    _loop(i);
+  }
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", {
+    key: "aln-" + label,
+    className: "aln-row" + (rowNumber === highlightedRow ? " highlighted" : "")
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
+    className: "aln-label"
+  }, label), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
+    className: "aln-seqnum",
+    style: {
+      "position": "sticky",
+      "left": labelWidth
+    }
+  }, show_seqnum ? rowNumber : ""), colSpanPre > 0 && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
+    colSpan: colSpanPre
+  }), childrenCols, colSpanPost > 0 && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
+    colSpan: colSpanPost
+  }));
+}
+function getRenderBounds(_ref) {
+  var scrollLeft = _ref.scrollLeft,
+    scrollWidth = _ref.scrollWidth,
+    stickyWidth = _ref.stickyWidth,
+    alnLength = _ref.alnLength,
+    zoom = _ref.zoom,
+    _ref$padding = _ref.padding,
+    padding = _ref$padding === void 0 ? 2 : _ref$padding;
+  // Each td has a padding of one and a width of `zoom`, therefore we need `zoom + 2`
+  console.log(scrollLeft, scrollWidth);
+  var renderStart = Math.max(0, Math.floor(scrollLeft / (zoom + 2)) - padding);
+  var renderEnd = Math.min(alnLength, renderStart + Math.ceil(scrollWidth / (zoom + 2)) + padding);
+  console.log(renderStart, renderEnd);
+  return [0, alnLength];
+  return [renderStart, renderEnd];
 }
 function rescale_series(values, breaks) {
   var min = 0,
@@ -36674,9 +36860,9 @@ function make_series_scale(breaks) {
       key: "break-" + i,
       style: {
         "position": "absolute",
-        "bottom": "".concat(x * 100, "%"),
+        "bottom": "calc(".concat(x * 100, "% - 1px)"),
         "width": breaks_width,
-        "left": "calc(100% - ".concat(breaks_width, " + 1px)"),
+        "left": "calc(100% - ".concat(breaks_width, ")"),
         "borderBottom": "0.5px solid black"
       }
     });
@@ -36686,64 +36872,94 @@ function make_series_scale(breaks) {
       style: {
         "position": "absolute",
         "bottom": "".concat(x * 100, "%"),
-        "left": "calc(100% - ".concat(breaks_width, ")"),
-        "transform": "translate(-100%, 0%)"
+        "left": "calc(100% - ".concat(breaks_width, " - 2px)"),
+        "lineHeight": "8px",
+        "textAlign": "center",
+        "transform": "translate(-100%, ".concat(x * 100, "%)")
       }
     }, breaks[i].toFixed(1));
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    style: {
+      "position": "absolute",
+      "right": "0px",
+      "bottom": "0px",
+      "height": "100%",
+      "width": "1px",
+      "backgroundColor": "black"
+    }
   }));
 }
 function make_color_scheme(alignment, scheme) {
-  var seqIds = Object.keys(alignment);
-  var aln_length = alignment[seqIds[0]].length;
-  var colors = {};
-  seqIds.forEach(function (id) {
-    return colors[id] = [];
-  });
-  var _loop = function _loop(i) {
-    var column = seqIds.map(function (id) {
-      return alignment[id][i];
+  try {
+    var seqIds = Object.keys(alignment);
+    var aln_length = alignment[seqIds[0]].length;
+    var colors = {};
+    seqIds.forEach(function (id) {
+      return colors[id] = [];
     });
-    var column_colors = Object(_msa_color_schemes_js__WEBPACK_IMPORTED_MODULE_4__["color_msa_column"])(column, scheme);
-    seqIds.forEach(function (id, index) {
-      return colors[id].push(column_colors[index]);
-    });
-  };
-  for (var i = 0; i < aln_length; i++) {
-    _loop(i);
+    var _loop2 = function _loop2(i) {
+      var column = seqIds.map(function (id) {
+        return alignment[id][i];
+      });
+      var column_colors = Object(_msa_color_schemes_js__WEBPACK_IMPORTED_MODULE_3__["color_msa_column"])(column, scheme);
+      seqIds.forEach(function (id, index) {
+        return colors[id].push(column_colors[index]);
+      });
+    };
+    for (var i = 0; i < aln_length; i++) {
+      _loop2(i);
+    }
+    return colors;
+  } catch (e) {
+    return null;
   }
-  return colors;
 }
 function get_alignment_cumsum(alignment) {
-  var res = {};
-  for (var _i = 0, _Object$entries = Object.entries(alignment); _i < _Object$entries.length; _i++) {
-    var _Object$entries$_i = _slicedToArray(_Object$entries[_i], 2),
-      key = _Object$entries$_i[0],
-      val = _Object$entries$_i[1];
-    res[key] = [];
-    var cumsum = 0;
-    var _iterator = _createForOfIteratorHelper(val),
-      _step;
-    try {
-      for (_iterator.s(); !(_step = _iterator.n()).done;) {
-        var x = _step.value;
-        cumsum += x === "-" ? 0 : 1;
-        res[key].push(cumsum);
+  try {
+    var res = {};
+    for (var _i2 = 0, _Object$entries = Object.entries(alignment); _i2 < _Object$entries.length; _i2++) {
+      var _Object$entries$_i = _slicedToArray(_Object$entries[_i2], 2),
+        key = _Object$entries$_i[0],
+        val = _Object$entries$_i[1];
+      res[key] = [];
+      var cumsum = 0;
+      var _iterator = _createForOfIteratorHelper(val),
+        _step;
+      try {
+        for (_iterator.s(); !(_step = _iterator.n()).done;) {
+          var x = _step.value;
+          cumsum += x === "-" ? 0 : 1;
+          res[key].push(cumsum);
+        }
+      } catch (err) {
+        _iterator.e(err);
+      } finally {
+        _iterator.f();
       }
-    } catch (err) {
-      _iterator.e(err);
-    } finally {
-      _iterator.f();
     }
+    return res;
+  } catch (e) {
+    return null;
   }
-  return res;
 }
-function Seqselection(_ref) {
-  var id = _ref.id,
-    included = _ref.included,
-    excluded = _ref.excluded,
-    setIncluded = _ref.setIncluded,
-    setExcluded = _ref.setExcluded;
+function get_alignment_breaks(alnLength, mod) {
+  var aln_breaks = new Array(alnLength);
+  for (var i = 0; i < alnLength; i++) {
+    if (i % mod === 0) aln_breaks[i] = String(i + 1);else aln_breaks[i] = "";
+  }
+  return aln_breaks;
+}
+function Seqselection(_ref2) {
+  var id = _ref2.id,
+    included = _ref2.included,
+    excluded = _ref2.excluded,
+    setIncluded = _ref2.setIncluded,
+    setExcluded = _ref2.setExcluded,
+    enabled = _ref2.enabled;
   // sortablejs needs items as objects with at least the `id` field.
+  if (!enabled || !included) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null);
+  }
   var includedItems = make_sortablejs_items(included);
   var excludedItems = make_sortablejs_items(excluded);
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -36767,7 +36983,7 @@ function Seqselection(_ref) {
     list: excludedItems,
     setList: setExcluded,
     className: "seqselection-sortable"
-  }, excluded.length ? excludedItems.map(function (item) {
+  }, excludedItems ? excludedItems.map(function (item) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
       key: item.id,
       className: "seqselection-sortable-item"
@@ -36796,7 +37012,7 @@ DashSeqaln.propTypes = {
   /**
    * A label that will be printed when this component is rendered.
    */
-  title: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string.isRequired,
+  title: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string,
   /**
    * An object representing the MSA.
    */

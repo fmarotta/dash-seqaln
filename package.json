@@ -1,6 +1,6 @@
 {
   "name": "dash_seqaln",
-  "version": "0.0.2",
+  "version": "0.1.1",
   "description": "A table-based component for multiple sequence alignments.",
   "main": "build/index.js",
   "scripts": {
@@ -16,7 +16,11 @@
   "author": "Federico Marotta <federico.marotta96@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "@glideapps/glide-data-grid": "^5.2.1",
+    "lodash": "^4.17.21",
+    "marked": "^5.1.0",
     "ramda": "^0.26.1",
+    "react-responsive-carousel": "^3.2.23",
     "react-sortablejs": "^6.1.1",
     "sortablejs": "1.14"
   },

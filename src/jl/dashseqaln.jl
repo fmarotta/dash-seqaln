@@ -14,7 +14,7 @@ Keyword arguments:
 - `excluded` (Array; optional): List of sequence IDs to NOT show in the alignment.
 - `included` (Array; optional): List of sequence IDs to show in the alignment.
 - `series` (Array; optional): List of objects, each containing the data for a bar plot.
-- `title` (String; required): A label that will be printed when this component is rendered.
+- `title` (String; optional): A label that will be printed when this component is rendered.
 """
 function dashseqaln(; kwargs...)
         available_props = Symbol[:id, :alignment, :color_scheme, :excluded, :included, :series, :title]

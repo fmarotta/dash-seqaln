@@ -4,6 +4,7 @@
 .DashSeqaln table {
   font-family: monospace;
   border-spacing: 0px;
+  border-collapse: collapse;
 }
 
 .DashSeqaln .series {
@@ -41,10 +42,15 @@
 .DashSeqaln .series-separator {
   height: 20px;
   padding: 0px;
-  border-top: dashed 2px lightgray;
+  border-top: solid 2px lightgray;
+  border-collapse: revert;
+  font-family: revert;
+  font-weight: revert;
 }
 
-.DashSeqaln .aln {
+.DashSeqaln .aln-row.highlighted {
+  border-bottom: 2px solid red;
+  border-top: 2px solid red;
 }
 
 .DashSeqaln .aln-axis {
@@ -55,8 +61,21 @@
 }
 
 .DashSeqaln .aln-label {
-  padding-right: 30px;
+  padding-right: 5px;
   font-weight: bold;
+  text-align: right;
+}
+
+.DashSeqaln .series-label,
+.DashSeqaln .series-scale,
+.DashSeqaln .aln-axis-label,
+.DashSeqaln .aln-axis-seqnum,
+.DashSeqaln .aln-label,
+.DashSeqaln .aln-seqnum {
+  position: sticky;
+  left: 0px;
+  background-color: white;
+  z-index: 1;
 }
 
 .DashSeqaln .aln-seqnum {
@@ -69,6 +88,11 @@
   cursor: default;
   text-align: center;
   position: relative; /* don't change me */
+}
+
+.DashSeqaln .aln-letter.highlighted {
+  border-left: 2px solid red;
+  border-right: 2px solid red;
 }
 
 .DashSeqaln .aln-letter:hover .aln-letter-tooltip {
