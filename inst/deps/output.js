@@ -14,7 +14,7 @@ window["dash_seqaln"] =
 /******/ 	function hotDownloadUpdateChunk(chunkId) {
 /******/ 		var script = document.createElement("script");
 /******/ 		script.charset = "utf-8";
-/******/ 		script.src = __webpack_require__.p + "a7266b1-" + chunkId + "-wps-hmr.js";
+/******/ 		script.src = __webpack_require__.p + "c8c2d69-" + chunkId + "-wps-hmr.js";
 /******/ 		if (null) script.crossOrigin = null;
 /******/ 		document.head.appendChild(script);
 /******/ 	}
@@ -28,7 +28,7 @@ window["dash_seqaln"] =
 /******/ 			}
 /******/ 			try {
 /******/ 				var request = new XMLHttpRequest();
-/******/ 				var requestPath = __webpack_require__.p + "a7266b1-wps-hmr.json";
+/******/ 				var requestPath = __webpack_require__.p + "c8c2d69-wps-hmr.json";
 /******/ 				request.open("GET", requestPath, true);
 /******/ 				request.timeout = requestTimeout;
 /******/ 				request.send(null);
@@ -64,7 +64,7 @@ window["dash_seqaln"] =
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "a3a2b3283b6d7ed74de9";
+/******/ 	var hotCurrentHash = "3390d615524a7da4a118";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -836,7 +836,7 @@ window["dash_seqaln"] =
 /******/ 	        var srcFragments = src.split('/');
 /******/ 	        var fileFragments = srcFragments.slice(-1)[0].split('.');
 /******/
-/******/ 	        fileFragments.splice(1, 0, "v0_1_0m1687971844");
+/******/ 	        fileFragments.splice(1, 0, "v0_1_1m1688052002");
 /******/ 	        srcFragments.splice(-1, 1, fileFragments.join('.'))
 /******/
 /******/ 	        return srcFragments.join('/');
@@ -35238,7 +35238,7 @@ function invariant(condition, message) {
   let hash = '<unknown>';
   let options;
   try {
-    options = {"compress":null,"historyFallback":false,"hmr":true,"host":null,"liveReload":false,"log":{"level":"info","prefix":{"template":"{{level}}"},"name":"webpack-plugin-serve"},"open":true,"port":55555,"progress":true,"secure":false,"static":["/home/fmarotta/Projects/dash-seqaln"],"status":true,"address":"[::]:55555","compilerName":null,"wpsId":"a7266b1"};
+    options = {"compress":null,"historyFallback":false,"hmr":true,"host":null,"liveReload":false,"log":{"level":"info","prefix":{"template":"{{level}}"},"name":"webpack-plugin-serve"},"open":true,"port":55555,"progress":true,"secure":false,"static":["/home/fmarotta/Projects/dash-seqaln"],"status":true,"address":"[::]:55555","compilerName":null,"wpsId":"c8c2d69"};
   } catch (e) {
     const { log } = __webpack_require__(/*! ./lib/client/log */ "./node_modules/webpack-plugin-serve/lib/client/log.js");
     log.error(
@@ -36362,10 +36362,10 @@ var sampleSeries = [{
   breaks: [0, .5, 1]
 }];
 var sampleAln = {
-  "id1": "ART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGP",
-  "id2": "A-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD",
-  "id3": "AR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP",
-  "id4": "ART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGP"
+  "id1": "ART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGP".split(""),
+  "id2": "A-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD".split(""),
+  "id3": "AR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP".split(""),
+  "id4": "ART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGPWTQRW-LLERERP---RM-MART--RGP".split("")
   /*
   "id5": "A-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD-TDRWPLLD-EWP---RTFMA-MD-RGD",
   "id6": "AR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP-TERWP--ERERP---RM-MAR--TRGP",
@@ -36555,6 +36555,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
  * ExampleComponent is an example component.
  */
 function DashSeqaln(props) {
+  // Seqaln properties
   var id = props.id,
     title = props.title,
     alignment = props.alignment,
@@ -36563,6 +36564,7 @@ function DashSeqaln(props) {
     excluded = props.excluded,
     color_scheme = props.color_scheme,
     setProps = props.setProps;
+  // Customisation options
   var _props$allow_sequence = props.allow_sequence_selection,
     allow_sequence_selection = _props$allow_sequence === void 0 ? true : _props$allow_sequence,
     _props$show_letters = props.show_letters,
@@ -36572,53 +36574,48 @@ function DashSeqaln(props) {
     _props$zoom = props.zoom,
     zoom = _props$zoom === void 0 ? 10 : _props$zoom;
   var alnLength = alignment ? alignment[Object.keys(alignment)[0]].length : 0;
+  // Ref & state to save the width of the first column (needed to position the second column relatively)
   var labelRef = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])();
-  var scaleRef = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])();
-  var scrollViewportRef = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])();
   var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(0),
     _useState2 = _slicedToArray(_useState, 2),
     labelWidth = _useState2[0],
     setLabelWidth = _useState2[1];
+  // Ref & state to save the width of the scrollable area
+  var scrollViewportRef = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])();
   var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(0),
     _useState4 = _slicedToArray(_useState3, 2),
-    scaleWidth = _useState4[0],
-    setScaleWidth = _useState4[1];
-  var _useState5 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(0),
+    scrollViewportWidth = _useState4[0],
+    setScrollViewportWidth = _useState4[1];
+  // Highlighting
+  var _useState5 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(),
     _useState6 = _slicedToArray(_useState5, 2),
-    scrollViewportWidth = _useState6[0],
-    setScrollViewportWidth = _useState6[1];
+    highlightedRow = _useState6[0],
+    setHighlightedRow = _useState6[1];
   var _useState7 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(),
     _useState8 = _slicedToArray(_useState7, 2),
-    highlightedRow = _useState8[0],
-    setHighlightedRow = _useState8[1];
-  var _useState9 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(),
+    highlightedCol = _useState8[0],
+    setHighlightedCol = _useState8[1];
+  // Rendering params
+  var _useState9 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])([0, 0]),
     _useState10 = _slicedToArray(_useState9, 2),
-    highlightedCol = _useState10[0],
-    setHighlightedCol = _useState10[1];
-  var _useState11 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])([0, alnLength]),
+    renderBounds = _useState10[0],
+    setRenderBounds = _useState10[1];
+  var _useState11 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
     _useState12 = _slicedToArray(_useState11, 2),
-    renderBounds = _useState12[0],
-    setRenderBounds = _useState12[1];
-  var _useState13 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
-    _useState14 = _slicedToArray(_useState13, 2),
-    ticking = _useState14[0],
-    setTicking = _useState14[1];
-  Object(react__WEBPACK_IMPORTED_MODULE_0__["useLayoutEffect"])(function () {
+    ticking = _useState12[0],
+    setTicking = _useState12[1];
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
     var lw = labelRef.current.getBoundingClientRect().width;
-    var sw = scaleRef.current.getBoundingClientRect().width;
     var svw = scrollViewportRef.current.getBoundingClientRect().width;
     setLabelWidth(lw);
-    setScaleWidth(sw);
     setScrollViewportWidth(svw);
     setRenderBounds(getRenderBounds({
       scrollLeft: 0,
       scrollWidth: svw,
-      stickyWidth: lw + sw,
       alnLength: alnLength,
       zoom: zoom
     }));
-  }, []);
-  // console.log(scrollViewPort.scrollLeft);
+  }, [labelRef, scrollViewportRef, alnLength, alignment, series, zoom]);
   var setIncluded = function setIncluded(items) {
     setProps({
       included: items.map(function (x) {
@@ -36636,27 +36633,22 @@ function DashSeqaln(props) {
   var setHighlighted = function setHighlighted(row, col) {
     setHighlightedRow(row);
     setHighlightedCol(col);
-    // setProps({highlightedRow: row, highlightedCol: col});
   };
-
   var handleScroll = function handleScroll() {
-    // if (!ticking) {
-    console.log(renderBounds);
-    window.requestAnimationFrame(function () {
-      console.log(scrollViewportRef);
-      setRenderBounds(getRenderBounds({
-        scrollLeft: scrollViewportRef.current.scrollLeft,
-        scrollWidth: scrollViewportWidth,
-        stickyWidth: labelWidth + scaleWidth,
-        alnLength: alnLength,
-        zoom: zoom
-      }));
-      // setTicking(false);
-    });
-    // setTicking(true);
-    // };
+    if (!ticking) {
+      setTicking(true);
+      window.requestAnimationFrame(function () {
+        setRenderBounds(getRenderBounds({
+          scrollLeft: scrollViewportRef.current.scrollLeft,
+          scrollWidth: scrollViewportWidth,
+          alnLength: alnLength,
+          zoom: zoom
+        }));
+        setTicking(false);
+      });
+    }
   };
-
+  // Transformed values that don't need to be recomputed every time
   var alignment_cumsum = Object(react__WEBPACK_IMPORTED_MODULE_0__["useMemo"])(function () {
     return get_alignment_cumsum(alignment);
   }, [alignment]);
@@ -36680,11 +36672,11 @@ function DashSeqaln(props) {
       return handleScroll();
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("table", null, series && series.map(function (seriesItem) {
-    return VirtualHead(seriesItem.label, seriesItem.breaks, seriesItem.height, rescale_series(seriesItem.values, seriesItem.breaks), seriesItem.color, labelWidth, renderBounds);
+    return VirtualHead(seriesItem.label, seriesItem.breaks, seriesItem.height, seriesItem.values, seriesItem.color, labelWidth, renderBounds);
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tbody", {
     className: "aln"
-  }, VirtualBreaks(labelRef, scaleRef, aln_breaks, zoom, labelWidth, renderBounds), included && included.map(function (seqId, seqIndex) {
-    return VirtualAlignment(seqId, seqIndex, alignment[seqId].split(""), alignment_colors[seqId], alignment_cumsum[seqId], highlightedRow, highlightedCol, show_seqnum, show_letters, zoom, labelWidth, renderBounds);
+  }, VirtualBreaks(labelRef, aln_breaks, zoom, labelWidth, renderBounds), included && included.map(function (seqId, seqIndex) {
+    return VirtualAlignment(seqId, seqIndex, alignment[seqId], alignment_colors[seqId], alignment_cumsum[seqId], highlightedRow, highlightedCol, show_seqnum, show_letters, zoom, labelWidth, renderBounds);
   })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Seqselection, {
     id: id,
     included: included,
@@ -36735,7 +36727,8 @@ function VirtualHead(label, breaks, height, values, color, labelWidth, renderBou
     className: "series-separator"
   })));
 }
-function VirtualBreaks(labelRef, scaleRef, values, zoom, labelWidth, renderBounds) {
+function VirtualBreaks(labelRef, values, zoom, labelWidth, renderBounds) {
+  // NOTE: only this component has the proper colSpanPre and colSpanPost widths becuse we know it's unique.
   var colSpanPre = renderBounds[0];
   var colSpanPost = values.length - renderBounds[1];
   // Each td has a padding of one, so we need `zoom + 2`
@@ -36759,7 +36752,6 @@ function VirtualBreaks(labelRef, scaleRef, values, zoom, labelWidth, renderBound
     ref: labelRef,
     className: "aln-axis-label"
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
-    ref: scaleRef,
     className: "aln-axis-seqnum",
     style: {
       "position": "sticky",
@@ -36819,23 +36811,63 @@ function VirtualAlignment(label, rowNumber, values, colors, cumsum, highlightedR
     colSpan: colSpanPost
   }));
 }
-function getRenderBounds(_ref) {
-  var scrollLeft = _ref.scrollLeft,
-    scrollWidth = _ref.scrollWidth,
-    stickyWidth = _ref.stickyWidth,
-    alnLength = _ref.alnLength,
+function getWindowSize(_ref) {
+  var scrollWidth = _ref.scrollWidth,
     zoom = _ref.zoom,
     _ref$padding = _ref.padding,
-    padding = _ref$padding === void 0 ? 2 : _ref$padding;
+    padding = _ref$padding === void 0 ? 20 : _ref$padding;
+  return Math.ceil(scrollWidth / (zoom + 2)) + 2 * padding;
+}
+function getRenderBounds(_ref2) {
+  var scrollLeft = _ref2.scrollLeft,
+    scrollWidth = _ref2.scrollWidth,
+    alnLength = _ref2.alnLength,
+    zoom = _ref2.zoom,
+    _ref2$padding = _ref2.padding,
+    padding = _ref2$padding === void 0 ? 20 : _ref2$padding;
   // Each td has a padding of one and a width of `zoom`, therefore we need `zoom + 2`
-  console.log(scrollLeft, scrollWidth);
-  var renderStart = Math.max(0, Math.floor(scrollLeft / (zoom + 2)) - padding);
-  var renderEnd = Math.min(alnLength, renderStart + Math.ceil(scrollWidth / (zoom + 2)) + padding);
-  console.log(renderStart, renderEnd);
-  return [0, alnLength];
+  // the `padding` variable refers to how many columns outside of the view should we render
+  var windowSize = getWindowSize({
+    scrollWidth: scrollWidth,
+    zoom: zoom,
+    padding: padding
+  });
+  var renderStart = Math.max(0, Math.min(alnLength - windowSize, Math.floor(scrollLeft / (zoom + 2)) - padding));
+  var renderEnd = Math.min(alnLength, renderStart + windowSize);
   return [renderStart, renderEnd];
 }
-function rescale_series(values, breaks) {
+function split_alignment(alignment) {
+  try {
+    var res = {};
+    for (var _i2 = 0, _Object$keys = Object.keys(alignment); _i2 < _Object$keys.length; _i2++) {
+      var seqId = _Object$keys[_i2];
+      res[seqId] = alignment[seqId].split("");
+    }
+    return res;
+  } catch (e) {
+    return null;
+  }
+}
+function rescale_series(series) {
+  try {
+    var res = new Array(series.length);
+    for (var seriesId in series) {
+      res[seriesId] = {};
+      for (var _i3 = 0, _Object$keys2 = Object.keys(series[seriesId]); _i3 < _Object$keys2.length; _i3++) {
+        var item = _Object$keys2[_i3];
+        if (item === "values") {
+          res[seriesId][item] = rescale_series_values(series[seriesId][item], series[seriesId].breaks);
+        } else {
+          res[seriesId][item] = series[seriesId][item];
+        }
+      }
+    }
+    return res;
+  } catch (e) {
+    return null;
+  }
+}
+function rescale_series_values(values, breaks) {
   var min = 0,
     max = 1;
   if (breaks) {
@@ -36854,7 +36886,7 @@ function make_series_scale(breaks) {
   }
   var min = breaks[0];
   var max = breaks[breaks.length - 1];
-  var breaks_rescaled = rescale_series(breaks, breaks);
+  var breaks_rescaled = rescale_series_values(breaks, breaks);
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, breaks_rescaled.map(function (x, i) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
       key: "break-" + i,
@@ -36917,8 +36949,8 @@ function make_color_scheme(alignment, scheme) {
 function get_alignment_cumsum(alignment) {
   try {
     var res = {};
-    for (var _i2 = 0, _Object$entries = Object.entries(alignment); _i2 < _Object$entries.length; _i2++) {
-      var _Object$entries$_i = _slicedToArray(_Object$entries[_i2], 2),
+    for (var _i4 = 0, _Object$entries = Object.entries(alignment); _i4 < _Object$entries.length; _i4++) {
+      var _Object$entries$_i = _slicedToArray(_Object$entries[_i4], 2),
         key = _Object$entries$_i[0],
         val = _Object$entries$_i[1];
       res[key] = [];
@@ -36949,13 +36981,13 @@ function get_alignment_breaks(alnLength, mod) {
   }
   return aln_breaks;
 }
-function Seqselection(_ref2) {
-  var id = _ref2.id,
-    included = _ref2.included,
-    excluded = _ref2.excluded,
-    setIncluded = _ref2.setIncluded,
-    setExcluded = _ref2.setExcluded,
-    enabled = _ref2.enabled;
+function Seqselection(_ref3) {
+  var id = _ref3.id,
+    included = _ref3.included,
+    excluded = _ref3.excluded,
+    setIncluded = _ref3.setIncluded,
+    setExcluded = _ref3.setExcluded,
+    enabled = _ref3.enabled;
   // sortablejs needs items as objects with at least the `id` field.
   if (!enabled || !included) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null);

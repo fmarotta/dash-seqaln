@@ -19,7 +19,6 @@ python setup.py sdist bdist_wheel
 * [x] show msa as table
 * [x] show histograms
 * [x] color the msa
-* ~[] support clicking rows or cols~ (What action should be triggered?)
 * [] add a textbox to the right where user can write own annotations
 * [x] overing residue shows a popup with its actual position in the sequence (not in the aln), OR ability to choose one sequence as reference
 * [x] scale the height of the histograms between a and b
@@ -30,6 +29,15 @@ python setup.py sdist bdist_wheel
 * [x] show letters or hide them
 * [x] change the width of the <td>s to zoom out
 * [x] reorganise css class names (e.g. all labels should be the same)
+* [x] make more modular
+* [x] use virtual scrolling
+* [ ] scrolling is still a bit sluggish, see if performance can be improved (adding more padding improved a bit)
+* [ ] click support
+    * [ ] on a sequence, it highlights the row
+    * [ ] on a series or residueNumber, it highlights the column
+    * [ ] on a cell, it highlights both row and column
+* ~[ ] memoize the rescaled series values and the .split("")ted alignment~ (we ask the user to do these steps)
+* [ ] move style to css
 
 # dash_seqaln
 

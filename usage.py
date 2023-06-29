@@ -12,9 +12,9 @@ sampleSeries = [
     },
 ]
 sampleAln = {
-    "id1": "ART--RGPWTQRW-LLERERP---RM-M",
-    "id2": "A-MD-RGD-TDRWPLLD-EWP---RTFM",
-    "id3": "AR--TRGP-TERWP--ERERP---RM-M",
+    "id1": list("ART--RGPWTQRW-LLERERP---RM-M"),
+    "id2": list("A-MD-RGD-TDRWPLLD-EWP---RTFM"),
+    "id3": list("AR--TRGP-TERWP--ERERP---RM-M"),
 }
 
 app.layout = html.Div([

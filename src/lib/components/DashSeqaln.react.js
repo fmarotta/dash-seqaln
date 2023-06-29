@@ -12,34 +12,35 @@ import './DashSeqaln.react.css';
  * ExampleComponent is an example component.
  */
 export default function DashSeqaln(props) {
+  // Seqaln properties
   const {id, title, alignment, series, included, excluded, color_scheme, setProps} = props;
+  // Customisation options
   const {allow_sequence_selection = true, show_letters = true, show_seqnum = false, zoom = 10} = props;
   const alnLength = alignment ? alignment[Object.keys(alignment)[0]].length : 0;
+  // Ref & state to save the width of the first column (needed to position the second column relatively)
   const labelRef = useRef();
-  const scaleRef = useRef();
-  const scrollViewportRef = useRef();
   const [labelWidth, setLabelWidth] = useState(0);
-  const [scaleWidth, setScaleWidth] = useState(0);
+  // Ref & state to save the width of the scrollable area
+  const scrollViewportRef = useRef();
   const [scrollViewportWidth, setScrollViewportWidth] = useState(0);
+  // Highlighting
   const [highlightedRow, setHighlightedRow] = useState();
   const [highlightedCol, setHighlightedCol] = useState();
+  // Rendering params
   const [renderBounds, setRenderBounds] = useState([0, 0]);
   const [ticking, setTicking] = useState(false);
   useEffect(() => {
     const lw = labelRef.current.getBoundingClientRect().width;
-    const sw = scaleRef.current.getBoundingClientRect().width;
     const svw = scrollViewportRef.current.getBoundingClientRect().width;
     setLabelWidth(lw);
-    setScaleWidth(sw);
     setScrollViewportWidth(svw);
     setRenderBounds(getRenderBounds({
       scrollLeft: 0,
       scrollWidth: svw,
-      stickyWidth: lw + sw,
       alnLength: alnLength,
       zoom: zoom,
     }));
-  }, [labelRef, scaleRef, scrollViewportRef, alnLength, zoom]);
+  }, [labelRef, scrollViewportRef, alnLength, alignment, series, zoom]);
   const setIncluded = (items) => {
     setProps({included: items.map((x) => x.name)});
   };
@@ -49,23 +50,22 @@ export default function DashSeqaln(props) {
   const setHighlighted = (row, col) => {
     setHighlightedRow(row);
     setHighlightedCol(col);
-    // setProps({highlightedRow: row, highlightedCol: col});
   };
   const handleScroll = () => {
     if (!ticking) {
+      setTicking(true);
       window.requestAnimationFrame(() => {
         setRenderBounds(getRenderBounds({
           scrollLeft: scrollViewportRef.current.scrollLeft,
           scrollWidth: scrollViewportWidth,
-          stickyWidth: labelWidth + scaleWidth,
           alnLength: alnLength,
           zoom: zoom,
         }));
         setTicking(false);
       });
-      setTicking(true);
-    };
+    }
   };
+  // Transformed values that don't need to be recomputed every time
   const alignment_cumsum = useMemo(() => get_alignment_cumsum(alignment), [alignment]);
   const alignment_colors = useMemo(() => make_color_scheme(alignment, color_scheme), [alignment, color_scheme]);
   const aln_breaks = useMemo(() => get_alignment_breaks(alnLength, 10), [alignment]);
@@ -74,10 +74,10 @@ export default function DashSeqaln(props) {
       {title && (<h2 className="title">{title}</h2>)}
       <div ref={scrollViewportRef} style={{"overflowX": "auto"}} onScroll={() => handleScroll()} >
       <table>
-        {series && series.map((seriesItem) => VirtualHead(seriesItem.label, seriesItem.breaks, seriesItem.height, rescale_series(seriesItem.values, seriesItem.breaks), seriesItem.color, labelWidth, renderBounds) )}
+        {series && series.map((seriesItem) => VirtualHead(seriesItem.label, seriesItem.breaks, seriesItem.height, seriesItem.values, seriesItem.color, labelWidth, renderBounds) )}
         <tbody className="aln">
-          {VirtualBreaks(labelRef, scaleRef, aln_breaks, zoom, labelWidth, renderBounds)}
-          {included && included.map((seqId, seqIndex) => VirtualAlignment(seqId, seqIndex, alignment[seqId].split(""), alignment_colors[seqId], alignment_cumsum[seqId], highlightedRow, highlightedCol, show_seqnum, show_letters, zoom, labelWidth, renderBounds))}
+          {VirtualBreaks(labelRef, aln_breaks, zoom, labelWidth, renderBounds)}
+          {included && included.map((seqId, seqIndex) => VirtualAlignment(seqId, seqIndex, alignment[seqId], alignment_colors[seqId], alignment_cumsum[seqId], highlightedRow, highlightedCol, show_seqnum, show_letters, zoom, labelWidth, renderBounds))}
         </tbody>
       </table>
       </div>
@@ -117,7 +117,8 @@ function VirtualHead(label, breaks, height, values, color, labelWidth, renderBou
   );
 }
 
-function VirtualBreaks(labelRef, scaleRef, values, zoom, labelWidth, renderBounds) {
+function VirtualBreaks(labelRef, values, zoom, labelWidth, renderBounds) {
+  // NOTE: only this component has the proper colSpanPre and colSpanPost widths becuse we know it's unique.
   const colSpanPre = renderBounds[0];
   const colSpanPost = values.length - renderBounds[1];
   // Each td has a padding of one, so we need `zoom + 2`
@@ -134,7 +135,7 @@ function VirtualBreaks(labelRef, scaleRef, values, zoom, labelWidth, renderBound
   return (
     <tr className="aln-axis">
       <td ref={labelRef} className="aln-axis-label"></td>
-      <td ref={scaleRef} className="aln-axis-seqnum" style={{"position": "sticky", "left": labelWidth}} ></td>
+      <td className="aln-axis-seqnum" style={{"position": "sticky", "left": labelWidth}} ></td>
       {colSpanPre > 0 && <td colSpan={colSpanPre} style={{"minWidth": widthPre + "px", "maxWidth": widthPre + "px"}}></td>}
       {childrenCols}
       {colSpanPost > 0 && <td colSpan={colSpanPost} style={{"minWidth": widthPost + "px", "maxWidth": widthPost + "px"}}></td>}
@@ -172,14 +173,51 @@ function VirtualAlignment(label, rowNumber, values, colors, cumsum, highlightedR
   )
 }
 
-function getRenderBounds({ scrollLeft, scrollWidth, stickyWidth, alnLength, zoom, padding = 2 }) {
+function getWindowSize({ scrollWidth, zoom, padding = 20 }) {
+  return Math.ceil(scrollWidth / (zoom + 2)) + 2 * padding
+}
+
+function getRenderBounds({ scrollLeft, scrollWidth, alnLength, zoom, padding = 20 }) {
   // Each td has a padding of one and a width of `zoom`, therefore we need `zoom + 2`
-  const renderStart = Math.max(0, Math.floor(scrollLeft / (zoom + 2)) - padding);
-  const renderEnd = Math.min(alnLength, renderStart + Math.ceil(scrollWidth / (zoom + 2)) + padding);
+  // the `padding` variable refers to how many columns outside of the view should we render
+  const windowSize = getWindowSize({ scrollWidth: scrollWidth, zoom: zoom, padding: padding })
+  const renderStart = Math.max(0, Math.min(alnLength - windowSize, Math.floor(scrollLeft / (zoom + 2)) - padding));
+  const renderEnd = Math.min(alnLength, renderStart + windowSize);
   return [renderStart, renderEnd];
 }
 
-function rescale_series(values, breaks) {
+function split_alignment(alignment) {
+  try {
+    const res = {};
+    for (let seqId of Object.keys(alignment)) {
+      res[seqId] = alignment[seqId].split("");
+    }
+    return res;
+  } catch(e) {
+    return null;
+  }
+}
+
+function rescale_series(series) {
+  try {
+    const res = new Array(series.length);
+    for (let seriesId in series) {
+      res[seriesId] = {};
+      for (let item of Object.keys(series[seriesId])) {
+        if (item === "values") {
+          res[seriesId][item] = rescale_series_values(series[seriesId][item], series[seriesId].breaks);
+        } else {
+          res[seriesId][item] = series[seriesId][item];
+        }
+      }
+    }
+    return res;
+  } catch(e) {
+    return null;
+  }
+}
+
+function rescale_series_values(values, breaks) {
   let min = 0, max = 1;
   if (breaks) {
     min = breaks[0];
@@ -195,7 +233,7 @@ function make_series_scale(breaks, breaks_width = "8px") {
   }
   let min = breaks[0];
   let max = breaks[breaks.length - 1];
-  let breaks_rescaled = rescale_series(breaks, breaks);
+  let breaks_rescaled = rescale_series_values(breaks, breaks);
   return (
     <>
     {breaks_rescaled.map((x, i) => (
