@@ -46,12 +46,16 @@
     "style-loader": "^0.23.1",
     "styled-jsx": "^3.2.1",
     "terser-webpack-plugin": "^2.3.0",
-    "webpack": "4.36.1",
+    "webpack": "^4.36.1",
     "webpack-cli": "3.3.6",
     "webpack-serve": "3.1.0"
   },
   "engines": {
     "node": ">=8.11.0",
     "npm": ">=6.1.0"
+  },
+  "directories": {
+    "man": "man",
+    "test": "tests"
   }
 }
